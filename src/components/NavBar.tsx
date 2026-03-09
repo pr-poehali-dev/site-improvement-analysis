@@ -30,7 +30,7 @@ export default function NavBar({
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center cursor-pointer" onClick={() => onScrollTo("home")}>
           <img
-            src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
+            src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/logos/logo_transparent.png"
             alt="Chopper Doctors World"
             className="h-12 w-12 object-contain"
           />

@@ -1,0 +1,17 @@
+{
+  "tests": [
+    {
+      "name": "Remove black background from logo",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "url": "https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg",
+        "key": "logos/logo_transparent.png",
+        "threshold": 40
+      },
+      "expectedStatus": 200,
+      "expectedBody": {"url": "string"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

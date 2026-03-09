@@ -119,7 +119,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                       </div>
                     )}
                     <img
-                      src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
+                      src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/logos/logo_transparent.png"
                       alt=""
                       className="absolute bottom-2 left-2 w-10 h-10 object-contain opacity-60 pointer-events-none"
                     />

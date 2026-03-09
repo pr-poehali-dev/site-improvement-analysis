@@ -100,9 +100,9 @@ const Index = () => {
             </div>
 
             <img
-              src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
+              src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/logos/logo_transparent.png"
               alt="Chopper Doctors World"
-              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in rounded-full"
+              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in drop-shadow-2xl"
               style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
             />
 
