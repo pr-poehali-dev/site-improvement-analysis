@@ -9,6 +9,15 @@ const PHOTO_2 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1
 const PHOTO_3 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/4f2acc4e-1dc0-41a4-bf72-2ee08fb895c4.jpg";
 const PHOTO_4 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/9c257ff6-fc47-4064-82f1-95c9aeb31499.jpg";
 const PHOTO_5 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/7832bfc0-a7ed-40ac-9d47-fc1024f40000.jpg";
+const PHOTO_6 = "https://cdn.poehali.dev/files/308fbeb2-6bce-4d94-8f05-56ac1c83e90e.jpg";
+const PHOTO_7 = "https://cdn.poehali.dev/files/d0ba2cd0-20f7-493c-b8e3-bbde5f0b215c.jpg";
+const PHOTO_8 = "https://cdn.poehali.dev/files/e81e58b2-b28b-4791-bdb6-d29bfb9194d5.jpg";
+const PHOTO_9 = "https://cdn.poehali.dev/files/193dfe10-b240-4ba5-8cef-babb5313a655.jpg";
+const PHOTO_10 = "https://cdn.poehali.dev/files/bbd8d093-e8d4-4600-bd4b-35f73d33aacd.jpg";
+const PHOTO_11 = "https://cdn.poehali.dev/files/be1d996c-3fb3-4451-91a3-d23d681ef3de.jpg";
+const PHOTO_12 = "https://cdn.poehali.dev/files/6d8b44ad-834a-47bf-999c-db9faccac504.jpg";
+const PHOTO_13 = "https://cdn.poehali.dev/files/bef55930-8d01-476f-8c0b-04abb829049b.jpg";
+const PHOTO_14 = "https://cdn.poehali.dev/files/3fae86bd-bc9e-4362-b537-91b93f66d782.jpg";
 
 const NAV_LINKS = [
   { id: "home", label: "Главная" },
@@ -32,6 +41,15 @@ const PORTFOLIO_ITEMS = [
   { id: 9, title: "Red Baron", category: "Чопперы", year: "2024", img: PHOTO_3, desc: "Массивный красно-чёрный чоппер с открытым двигателем. Мастер на борту — байк на зависть." },
   { id: 10, title: "Three Kings", category: "Кастом", year: "2024", img: PHOTO_4, desc: "Три разных чоппера на трассе. Демонстрация диапазона стилей мастерской." },
   { id: 11, title: "Dark Phantom", category: "Бобберы", year: "2024", img: PHOTO_5, desc: "Классический боббер с полным хромом. Бак с аэрографом, спицованные колёса." },
+  { id: 12, title: "Crimson Show Chopper", category: "Чопперы", year: "2025", img: PHOTO_6, desc: "Выставочный чоппер бордово-хромового окраса. Пламенный аэрограф на баке, широкая резина." },
+  { id: 13, title: "S&S X-Wedge Pro", category: "Кастом", year: "2025", img: PHOTO_7, desc: "Агрессивный оранжевый кастом на двигателе S&S X-Wedge. Низкая посадка, хром везде." },
+  { id: 14, title: "Black Dragon", category: "Чопперы", year: "2024", img: PHOTO_8, desc: "Чёрный чоппер с красным символом на баке. Хромированный V-twin, минималистичный дизайн." },
+  { id: 15, title: "Workshop Special", category: "Реставрация", year: "2024", img: PHOTO_9, desc: "Мастерская сборка — синий чоппер у фасада Harley-Davidson. Золотые выхлопы, спицованные колёса." },
+  { id: 16, title: "Garage Custom", category: "Кастом", year: "2023", img: PHOTO_10, desc: "Кастом из нашего гаража. Тёмно-красный бак с золотым пинстрайпингом, открытый V-twin." },
+  { id: 17, title: "Stealth Bobber", category: "Бобберы", year: "2023", img: PHOTO_11, desc: "Полностью чёрный боббер. Матовые поверхности, минимум хрома — максимум характера." },
+  { id: 18, title: "Long Fork Fire", category: "Чопперы", year: "2023", img: PHOTO_12, desc: "Длинновилочный чоппер с огненным аэрографом. Спицованные колёса 300+, рама на заказ." },
+  { id: 19, title: "Gold Flame Rider", category: "Кастом", year: "2022", img: PHOTO_13, desc: "Красно-золотой кастом с мастером. Пламенный бак, хромированный V-twin, широкое заднее колесо." },
+  { id: 20, title: "Vineyard Cruiser", category: "Чопперы", year: "2022", img: PHOTO_14, desc: "Чёрный хардтейл на фоне виноградников. Красный аэрограф, хромированный двигатель, шоу-класс." },
 ];
 
 const PARTS_BRANDS = [
