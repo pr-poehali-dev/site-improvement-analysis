@@ -32,7 +32,7 @@ export default function NavBar({
           <img
             src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/logos/logo_transparent.png"
             alt="Chopper Doctors World"
-            className="h-12 w-12 object-contain"
+            className="h-16 w-16 object-contain"
           />
         </div>
 
