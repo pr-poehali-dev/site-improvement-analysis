@@ -294,6 +294,37 @@ const Index = () => {
         </div>
       </section>
 
+      {/* BLOG */}
+      <section id="blog" className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <AnimatedSection>
+            <SectionLabel>{t("blog_label")}</SectionLabel>
+            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-4">{t("blog_title")}</h2>
+            <p className="font-body text-muted-foreground max-w-2xl leading-relaxed mb-12">{t("blog_desc")}</p>
+          </AnimatedSection>
+          <AnimatedSection>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { img: PHOTO_2, date: "March 2025", title: "CDW Signature Red — Build Story", desc: "How we built the flagship Chopper Doctors World showbike from scratch." },
+                { img: PHOTO_3, date: "January 2025", title: "Orange Flame Chopper — Revealed", desc: "The airbrush work alone took 3 weeks. Here's the full story behind this build." },
+                { img: PHOTO_5, date: "November 2024", title: "30 Years on the Road", desc: "A look back at three decades of passion, chrome, and custom motorcycles." },
+              ].map((post) => (
+                <div key={post.title} className="group border border-border rounded-sm overflow-hidden hover:border-fire/40 transition-all duration-300 cursor-pointer">
+                  <div className="aspect-video overflow-hidden">
+                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  </div>
+                  <div className="p-5">
+                    <span className="font-body text-xs text-fire uppercase tracking-widest">{post.date}</span>
+                    <h3 className="font-display text-lg uppercase tracking-wide mt-2 mb-2">{post.title}</h3>
+                    <p className="font-body text-sm text-muted-foreground leading-relaxed">{post.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-24 px-6 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at center, hsl(0 90% 45% / 0.06) 0%, transparent 65%)" }} />
