@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import NavBar from "@/components/NavBar";
 import PortfolioSection from "@/components/PortfolioSection";
-import { Lang, TRANSLATIONS, STATS, PARTS_BRANDS, PHOTO_2, PHOTO_3, PHOTO_5, GARAGE_PHOTOS, FAMILY_PHOTOS } from "@/data/constants";
+import { Lang, TRANSLATIONS, STATS, PARTS_BRANDS, PHOTO_2, PHOTO_3, PHOTO_5, GARAGE_PHOTOS, FAMILY_PHOTOS, OPENING_2022_PHOTOS } from "@/data/constants";
 
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
@@ -37,6 +37,71 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
     <div className="flex items-center gap-3 mb-3">
       <div className="h-px w-12 bg-fire" />
       <span className="font-body text-xs text-fire uppercase tracking-widest">{children}</span>
+    </div>
+  );
+}
+
+function BlogAlbum({ title, desc, photosLabel, photos, cover }: {
+  title: string; desc: string; photosLabel: string; photos: string[]; cover: string;
+}) {
+  const [open, setOpen] = useState(false);
+  const [lightbox, setLightbox] = useState<string | null>(null);
+
+  return (
+    <div className="border border-border rounded-sm overflow-hidden hover:border-fire/40 transition-all duration-300">
+      <div
+        className="flex items-center gap-5 p-5 cursor-pointer group"
+        onClick={() => setOpen(!open)}
+      >
+        <div className="w-24 h-16 rounded-sm overflow-hidden flex-shrink-0 border border-border">
+          <img src={cover} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        </div>
+        <div className="flex-1 min-w-0">
+          <p className="font-body text-xs text-fire uppercase tracking-widest mb-1">September 2022</p>
+          <h3 className="font-display text-xl uppercase tracking-wide truncate">{title}</h3>
+          <p className="font-body text-sm text-muted-foreground mt-1">{desc}</p>
+        </div>
+        <div className="flex items-center gap-2 flex-shrink-0 text-muted-foreground">
+          <span className="font-body text-xs">{photos.length} {photosLabel}</span>
+          <Icon name={open ? "ChevronUp" : "ChevronDown"} size={18} className="text-fire" />
+        </div>
+      </div>
+
+      {open && (
+        <div className="border-t border-border p-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2">
+            {photos.map((url, i) => (
+              <div
+                key={i}
+                className="aspect-square overflow-hidden rounded-sm cursor-pointer border border-border hover:border-fire/50 transition-all"
+                onClick={() => setLightbox(url)}
+              >
+                <img src={url} alt="" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {lightbox && (
+        <div
+          className="fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center p-4"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            className="absolute top-4 right-4 w-10 h-10 bg-card border border-border rounded-sm flex items-center justify-center text-foreground hover:text-fire transition-colors"
+            onClick={() => setLightbox(null)}
+          >
+            <Icon name="X" size={20} />
+          </button>
+          <img
+            src={lightbox}
+            alt=""
+            className="max-w-full max-h-[90vh] object-contain rounded-sm"
+            onClick={e => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 }
@@ -303,24 +368,13 @@ const Index = () => {
             <p className="font-body text-muted-foreground max-w-2xl leading-relaxed mb-12">{t("blog_desc")}</p>
           </AnimatedSection>
           <AnimatedSection>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                { img: PHOTO_2, date: "March 2025", title: "CDW Signature Red — Build Story", desc: "How we built the flagship Chopper Doctors World showbike from scratch." },
-                { img: PHOTO_3, date: "January 2025", title: "Orange Flame Chopper — Revealed", desc: "The airbrush work alone took 3 weeks. Here's the full story behind this build." },
-                { img: PHOTO_5, date: "November 2024", title: "30 Years on the Road", desc: "A look back at three decades of passion, chrome, and custom motorcycles." },
-              ].map((post) => (
-                <div key={post.title} className="group border border-border rounded-sm overflow-hidden hover:border-fire/40 transition-all duration-300 cursor-pointer">
-                  <div className="aspect-video overflow-hidden">
-                    <img src={post.img} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-                  </div>
-                  <div className="p-5">
-                    <span className="font-body text-xs text-fire uppercase tracking-widest">{post.date}</span>
-                    <h3 className="font-display text-lg uppercase tracking-wide mt-2 mb-2">{post.title}</h3>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed">{post.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <BlogAlbum
+              title={t("album_opening_title")}
+              desc={t("album_opening_desc")}
+              photosLabel={t("album_opening_photos")}
+              photos={OPENING_2022_PHOTOS}
+              cover={OPENING_2022_PHOTOS[0]}
+            />
           </AnimatedSection>
         </div>
       </section>
