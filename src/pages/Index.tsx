@@ -102,8 +102,8 @@ const Index = () => {
             <img
               src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
               alt="Chopper Doctors World"
-              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.4s", animationFillMode: "forwards", mixBlendMode: "screen" }}
+              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in rounded-full"
+              style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
             />
 
             <p
