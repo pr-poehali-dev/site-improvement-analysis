@@ -99,14 +99,12 @@ const Index = () => {
               <span className="font-body text-xs text-fire tracking-widest uppercase">{t("hero_badge")}</span>
             </div>
 
-            <h1
-              className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tight mb-4 opacity-0 animate-fade-in"
+            <img
+              src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
+              alt="Chopper Doctors World"
+              className="w-56 md:w-72 lg:w-80 object-contain mb-4 opacity-0 animate-fade-in drop-shadow-2xl"
               style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
-            >
-              <span className="block text-foreground">Chopper</span>
-              <span className="block text-fire">Doctors</span>
-              <span className="block text-foreground/70 text-3xl md:text-4xl mt-1 font-body font-light italic normal-case">World</span>
-            </h1>
+            />
 
             <p
               className="font-display text-xl md:text-2xl text-fire/90 tracking-wide mb-4 opacity-0 animate-fade-in"
