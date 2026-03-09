@@ -260,12 +260,6 @@ export type PortfolioItem = {
 };
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
-  { id: 1, title: "Iron Skull Chopper", category: "Чопперы", year: "2024", img: HERO_IMG, desc: "Полная сборка с нуля. Двигатель S&S 124\", рама на заказ, хардтейл." },
-  { id: 2, title: "Midnight Bobber", category: "Бобберы", year: "2024", img: GALLERY_IMG_1, desc: "Реставрация Triumph 1969 года. Полный перебор двигателя, новая электрика." },
-  { id: 3, title: "Panhead Revival", category: "Реставрация", year: "2023", img: GALLERY_IMG_2, desc: "Восстановление Harley-Davidson Panhead 1952 года до заводского состояния." },
-  { id: 4, title: "Street Tracker Custom", category: "Кастом", year: "2023", img: GALLERY_IMG_1, desc: "Кастом на базе Honda CB750. Трекер с элементами кафе-рейсер." },
-  { id: 5, title: "Chrome Beast", category: "Тюнинг", year: "2023", img: HERO_IMG, desc: "Полная хромировка и покраска. Двигатель форсирован до 120 л.с." },
-  { id: 6, title: "Desert Racer", category: "Чопперы", year: "2022", img: GALLERY_IMG_2, desc: "Лонгбайк для дальних путешествий. Бак 30л, подвеска Pro-Link." },
   { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена." },
   { id: 8, title: "Blue Thunder", category: "Кастом", year: "2025", img: PHOTO_2, desc: "Синий кастом Chopper Doctors с пламенным аэрографом. Флагманский проект мастерской." },
   { id: 9, title: "Red Baron", category: "Чопперы", year: "2024", img: PHOTO_3, desc: "Массивный красно-чёрный чоппер с открытым двигателем. Мастер на борту — байк на зависть." },
