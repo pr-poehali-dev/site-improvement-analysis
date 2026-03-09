@@ -28,13 +28,12 @@ export default function NavBar({
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center gap-2 cursor-pointer" onClick={() => onScrollTo("home")}>
-          <div className="w-8 h-8 bg-fire rounded-sm flex items-center justify-center" style={{ boxShadow: "0 0 20px hsl(0 90% 45% / 0.5)" }}>
-            <Icon name="Wrench" size={16} className="text-white rotate-45" />
-          </div>
-          <span className="font-display text-xl tracking-widest uppercase text-foreground">
-            Chopper<span className="text-fire">Doctors</span>
-          </span>
+        <div className="flex items-center cursor-pointer" onClick={() => onScrollTo("home")}>
+          <img
+            src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
+            alt="Chopper Doctors World"
+            className="h-12 w-12 object-contain"
+          />
         </div>
 
         {/* Desktop */}

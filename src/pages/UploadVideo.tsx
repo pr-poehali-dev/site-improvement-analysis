@@ -77,9 +77,11 @@ export default function UploadVideo() {
     <div className="min-h-screen bg-background text-foreground flex items-center justify-center p-6">
       <div className="w-full max-w-xl">
         <div className="flex items-center gap-3 mb-8">
-          <div className="w-8 h-8 bg-fire rounded-sm flex items-center justify-center">
-            <Icon name="Video" size={16} className="text-white" />
-          </div>
+          <img
+            src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
+            alt="Chopper Doctors World"
+            className="w-10 h-10 object-contain"
+          />
           <div>
             <h1 className="font-display text-2xl uppercase tracking-wide">Загрузка видео</h1>
             <p className="font-body text-xs text-muted-foreground">Загрузи видео и скопируй ссылку для галереи</p>

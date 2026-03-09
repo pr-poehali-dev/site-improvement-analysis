@@ -118,6 +118,11 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                         </div>
                       </div>
                     )}
+                    <img
+                      src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
+                      alt=""
+                      className="absolute bottom-2 left-2 w-10 h-10 object-contain opacity-60 pointer-events-none"
+                    />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-70 group-hover:opacity-85 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
