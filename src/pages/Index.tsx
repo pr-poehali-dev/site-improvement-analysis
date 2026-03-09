@@ -15,34 +15,39 @@ const TRANSLATIONS: Record<Lang, Record<string, string>> = {
   en: {
     nav_bikes: "Motorcycles", nav_garage: "Garage", nav_parts: "Parts", nav_family: "Family",
     nav_contact: "Contact",
-    hero_badge: "Welcome to the world of Chopper Doctors",
-    hero_slogan: "\"Built to Ride\" — it's not just a slogan, it's a way of life",
-    hero_desc: "With over 30 years of experience, Chopper Doctors builds choppers that combine American style with Swiss quality and old-school tradition.",
-    hero_btn_portfolio: "View Motorcycles", hero_btn_contact: "Contact Us",
+    hero_badge: "Welcome to Chopper Doctors World",
+    hero_slogan: "Where \"Built to Ride\" is not just a slogan, it's a way of life.",
+    hero_desc: "With a passion that comes from over 30 years of bike building and riding experience, Chopper Doctors build bikes that combine American style, with meticulousness of Swiss quality, and the old school attitude. Everything we do is dedicated to the pursuit of excellence, in quality, technology, style and design. The ultimate chopper created to fulfill your dreams.",
+    hero_btn_portfolio: "Bike Gallery", hero_btn_contact: "Contact Us",
     stats_years: "years of experience", stats_projects: "projects", stats_certified: "H-D Certified", stats_passion: "passion",
-    portfolio_label: "Custom Motorcycles", portfolio_title: "Motorcycle Gallery",
-    portfolio_desc: "We build motorcycles that exist not only to be admired, but of course to be ridden. An uncompromising chopper, built to fulfill your dream.",
+    portfolio_label: "Custom Motorcycles", portfolio_title: "Bike Gallery",
+    portfolio_desc: "We build bikes that are made to be ridden, not just admired. Contact us when you are ready and we can help you bring your ideas into reality.",
     cat_all: "All Works", cat_choppers: "Choppers", cat_bobbers: "Bobbers", cat_restoration: "Restoration", cat_tuning: "Tuning", cat_custom: "Custom",
-    garage_label: "Harley Garage", garage_title: "Customization, Service & Repair",
-    garage_p1: "Your bike is your reflection, and we can help you with anything when it comes to customization. Helping bring your dream motorcycle to life, we offer not just style, but great riding performance.",
-    garage_p2: "We are Harley-Davidson certified, with numerous MMI degrees, and we can fulfill all your service and repair needs.",
-    garage_custom: "Customization", garage_service: "Service & Maintenance", garage_electric: "Electrics", garage_warranty: "H-D Warranty",
+    garage_label: "Harley Garage", garage_title: "Customizing, Service and Repairs",
+    garage_p1: "Your bike is a reflection of you, and we can help you with anything you need when it comes to customizing. While helping you accomplish your dream bike, we will advise you on not only style, but rideability.",
+    garage_p2: "Certified by Harley-Davidson, with multiple degrees from MMI, we can perform all your service and repair needs.",
+    garage_custom: "Customizing", garage_service: "Service & Maintenance", garage_electric: "Electrics", garage_warranty: "H-D Warranty",
     garage_btn: "Garage Gallery",
-    parts_label: "Parts & Components", parts_title: "New & Custom-Built Parts",
-    parts_p1: "When it comes to spare parts, we combine the latest technology with the best performance and highest quality, ensuring a smooth and enjoyable ride.",
-    parts_p2: "We work only with the world's best distributors and manufacturers. If what you're looking for hasn't been made yet —",
-    parts_p2_accent: "we can design and build anything you need.",
+    parts_label: "Parts & Components", parts_title: "New & Custom Designed Parts",
+    parts_p1: "When it comes to parts we combine the latest technology with best performance and top quality, to insure you have a trouble free and enjoyable ride.",
+    parts_p2: "This is accomplished by only associating ourselves with the best parts distributors and producers in the world. If what you are looking for is not already made —",
+    parts_p2_accent: "we can design and produce anything you would need.",
     parts_more: "… and more",
-    family_label: "Our Family", family_title: "Photo Album & Travels",
-    family_p1: "Growing up in California biker culture, we know that the people we ride with are just as important as what we ride.",
-    family_p2: "We prefer to surround ourselves with like-minded people who love to travel by motorcycle and who know what freedom means. That's why most of our clients become family.",
-    family_quote: "\"If you need it explained — you probably won't understand.\"",
-    family_btn: "Travel Gallery",
-    contact_label: "Contact", contact_title: "Let's bring your", contact_title2: "dream to life.",
-    contact_desc: "Contact us at your convenience and we'll help turn your ideas into reality.",
-    contact_write: "Write to Us", contact_call: "Call Us",
-    contact_address: "29670 Marbella, Malaga, Spain",
-    footer_rights: "© 2020 Chopper Doctors World — 29670 Marbella, Malaga, Spain",
+    family_label: "Roadtrips & Family", family_title: "Photo Album & Family",
+    family_p1: "Growing up in the California biker culture, who we ride with is as important as what we ride.",
+    family_p2: "We choose to surround ourselves with like minded people, that enjoy riding and the idea of what freedom is. This is why most of our customers become family.",
+    family_quote: "\"If we have to explain, you won't understand.\"",
+    family_btn: "Gallery",
+    contact_label: "Contact", contact_title: "Let's bring your", contact_title2: "ideas into reality.",
+    contact_desc: "Contact us when you are ready and we can help you bring your ideas into reality.",
+    contact_write: "Write to Us", contact_call: "+34 656 82 83 48",
+    contact_address: "Calle Polonia, 35, San Pedro de Alcántara, 29670 Marbella, Málaga, Spain",
+    contact_hours_title: "Business Hours",
+    contact_hours_1: "Tue, Wed & Thu: 10am – 7pm",
+    contact_hours_2: "Fri & Sat: 10am – 12pm and 2pm – 6pm",
+    contact_hours_3: "Closed Sunday & Monday",
+    contact_payment: "We accept cash, credit card and bank transfer.",
+    footer_rights: "© 2020 Chopper Doctors World — 29670 Marbella, Málaga, Spain",
     footer_terms: "Terms of Use",
     modal_order: "Order Similar Project",
   },
@@ -759,7 +764,7 @@ const Index = () => {
               {t("contact_write")}
             </button>
             <a
-              href="tel:+1234567890"
+              href="tel:+34656828348"
               className="font-display text-sm tracking-widest uppercase px-10 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm flex items-center gap-2"
             >
               <Icon name="Phone" size={16} />
@@ -767,11 +772,20 @@ const Index = () => {
             </a>
           </div>
 
-          <div className="flex flex-col items-center gap-2 text-muted-foreground">
+          <div className="flex flex-col items-center gap-4 text-muted-foreground">
             <div className="flex items-center gap-2 text-sm font-body">
-              <Icon name="MapPin" size={14} className="text-fire" />
+              <Icon name="MapPin" size={14} className="text-fire flex-shrink-0" />
               {t("contact_address")}
             </div>
+            {t("contact_hours_title") !== "contact_hours_title" && (
+              <div className="border border-border rounded-sm px-6 py-4 text-sm font-body text-center">
+                <p className="text-fire font-display text-xs uppercase tracking-widest mb-2">{t("contact_hours_title")}</p>
+                <p>{t("contact_hours_1")}</p>
+                <p>{t("contact_hours_2")}</p>
+                <p>{t("contact_hours_3")}</p>
+                <p className="mt-2 text-xs text-muted-foreground/70">{t("contact_payment")}</p>
+              </div>
+            )}
           </div>
         </AnimatedSection>
       </section>
