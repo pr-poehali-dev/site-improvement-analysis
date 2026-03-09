@@ -81,21 +81,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                 <p className="font-body text-muted-foreground max-w-2xl leading-relaxed">{t("portfolio_desc")}</p>
               </div>
             </div>
-            <div className="flex flex-wrap gap-2 mb-10">
-              {categories.map(cat => (
-                <button
-                  key={cat}
-                  onClick={() => setActiveCategory(cat)}
-                  className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-sm border transition-all ${
-                    activeCategory === cat
-                      ? "bg-fire text-white border-fire"
-                      : "border-border text-muted-foreground hover:border-fire/50 hover:text-foreground"
-                  }`}
-                >
-                  {cat}
-                </button>
-              ))}
-            </div>
+
           </AnimatedSectionLocal>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -123,20 +109,6 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                       alt=""
                       className="absolute bottom-2 left-2 w-10 h-10 object-contain opacity-60 pointer-events-none"
                     />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-70 group-hover:opacity-85 transition-opacity" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="font-body text-xs text-fire uppercase tracking-widest px-2 py-0.5 border border-fire/40 rounded-sm">
-                        {item.category}
-                      </span>
-                      <span className="font-body text-xs text-muted-foreground">{item.year}</span>
-                      {item.video && <Icon name="Video" size={12} className="text-fire ml-1" />}
-                    </div>
-                    <h3 className="font-display text-xl uppercase tracking-wide text-foreground mb-1">{item.title}</h3>
-                    <p className="font-body text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
-                      {item.desc}
-                    </p>
                   </div>
                   <div className="absolute top-4 right-4 w-8 h-8 rounded-sm bg-background/80 backdrop-blur-sm flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Icon name="Expand" size={14} className="text-fire" />
