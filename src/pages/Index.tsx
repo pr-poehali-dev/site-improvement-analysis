@@ -1,6 +1,189 @@
 import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 
+type Lang = "en" | "de" | "ru" | "es" | "nl";
+
+const LANGUAGES: { code: Lang; label: string; flag: string }[] = [
+  { code: "en", label: "EN", flag: "🇬🇧" },
+  { code: "de", label: "DE", flag: "🇩🇪" },
+  { code: "ru", label: "RU", flag: "🇷🇺" },
+  { code: "es", label: "ES", flag: "🇪🇸" },
+  { code: "nl", label: "NL", flag: "🇳🇱" },
+];
+
+const TRANSLATIONS: Record<Lang, Record<string, string>> = {
+  en: {
+    nav_bikes: "Motorcycles", nav_garage: "Garage", nav_parts: "Parts", nav_family: "Family",
+    nav_contact: "Contact",
+    hero_badge: "Welcome to the world of Chopper Doctors",
+    hero_slogan: "\"Built to Ride\" — it's not just a slogan, it's a way of life",
+    hero_desc: "With over 30 years of experience, Chopper Doctors builds choppers that combine American style with Swiss quality and old-school tradition.",
+    hero_btn_portfolio: "View Motorcycles", hero_btn_contact: "Contact Us",
+    stats_years: "years of experience", stats_projects: "projects", stats_certified: "H-D Certified", stats_passion: "passion",
+    portfolio_label: "Custom Motorcycles", portfolio_title: "Motorcycle Gallery",
+    portfolio_desc: "We build motorcycles that exist not only to be admired, but of course to be ridden. An uncompromising chopper, built to fulfill your dream.",
+    cat_all: "All Works", cat_choppers: "Choppers", cat_bobbers: "Bobbers", cat_restoration: "Restoration", cat_tuning: "Tuning", cat_custom: "Custom",
+    garage_label: "Harley Garage", garage_title: "Customization, Service & Repair",
+    garage_p1: "Your bike is your reflection, and we can help you with anything when it comes to customization. Helping bring your dream motorcycle to life, we offer not just style, but great riding performance.",
+    garage_p2: "We are Harley-Davidson certified, with numerous MMI degrees, and we can fulfill all your service and repair needs.",
+    garage_custom: "Customization", garage_service: "Service & Maintenance", garage_electric: "Electrics", garage_warranty: "H-D Warranty",
+    garage_btn: "Garage Gallery",
+    parts_label: "Parts & Components", parts_title: "New & Custom-Built Parts",
+    parts_p1: "When it comes to spare parts, we combine the latest technology with the best performance and highest quality, ensuring a smooth and enjoyable ride.",
+    parts_p2: "We work only with the world's best distributors and manufacturers. If what you're looking for hasn't been made yet —",
+    parts_p2_accent: "we can design and build anything you need.",
+    parts_more: "… and more",
+    family_label: "Our Family", family_title: "Photo Album & Travels",
+    family_p1: "Growing up in California biker culture, we know that the people we ride with are just as important as what we ride.",
+    family_p2: "We prefer to surround ourselves with like-minded people who love to travel by motorcycle and who know what freedom means. That's why most of our clients become family.",
+    family_quote: "\"If you need it explained — you probably won't understand.\"",
+    family_btn: "Travel Gallery",
+    contact_label: "Contact", contact_title: "Let's bring your", contact_title2: "dream to life.",
+    contact_desc: "Contact us at your convenience and we'll help turn your ideas into reality.",
+    contact_write: "Write to Us", contact_call: "Call Us",
+    contact_address: "29670 Marbella, Malaga, Spain",
+    footer_rights: "© 2020 Chopper Doctors World — 29670 Marbella, Malaga, Spain",
+    footer_terms: "Terms of Use",
+    modal_order: "Order Similar Project",
+  },
+  de: {
+    nav_bikes: "Motorräder", nav_garage: "Garage", nav_parts: "Teile", nav_family: "Familie",
+    nav_contact: "Kontakt",
+    hero_badge: "Willkommen in der Welt der Chopper Doctors",
+    hero_slogan: '"Zum Fahren gebaut" — das ist nicht nur ein Slogan, das ist ein Lebensstil',
+    hero_desc: "Mit über 30 Jahren Erfahrung baut Chopper Doctors Chopper, die amerikanischen Stil mit Schweizer Qualität und Old-School-Tradition verbinden.",
+    hero_btn_portfolio: "Motorräder ansehen", hero_btn_contact: "Kontakt aufnehmen",
+    stats_years: "Jahre Erfahrung", stats_projects: "Projekte", stats_certified: "H-D Zertifiziert", stats_passion: "Leidenschaft",
+    portfolio_label: "Custom-Motorräder", portfolio_title: "Motorrad Galerie",
+    portfolio_desc: "Wir bauen Motorräder, die nicht nur zur Bewunderung, sondern natürlich auch zum Fahren existieren. Ein kompromissloser Chopper, gebaut um Ihren Traum zu erfüllen.",
+    cat_all: "Alle Arbeiten", cat_choppers: "Chopper", cat_bobbers: "Bobber", cat_restoration: "Restaurierung", cat_tuning: "Tuning", cat_custom: "Custom",
+    garage_label: "Harley Garage", garage_title: "Customizing, Service & Reparatur",
+    garage_p1: "Ihr Bike ist Ihr Spiegelbild, und wir können Ihnen bei allem helfen, wenn es ums Customizing geht. Wir helfen Ihnen, Ihr Traummotorrad zu verwirklichen — nicht nur mit Stil, sondern auch mit hervorragenden Fahreigenschaften.",
+    garage_p2: "Wir sind Harley-Davidson zertifiziert, mit zahlreichen MMI-Abschlüssen, und können alle Ihre Service- und Reparaturanfragen erfüllen.",
+    garage_custom: "Customizing", garage_service: "Service & Wartung", garage_electric: "Elektrik", garage_warranty: "H-D Garantie",
+    garage_btn: "Garage Galerie",
+    parts_label: "Teile & Komponenten", parts_title: "Neue & speziell entwickelte Teile",
+    parts_p1: "Bei Ersatzteilen kombinieren wir neueste Technologie mit bester Leistung und höchster Qualität für eine problemlose und angenehme Fahrt.",
+    parts_p2: "Wir arbeiten nur mit den weltbesten Distributoren und Herstellern. Wenn das, was Sie suchen, noch nicht hergestellt wurde —",
+    parts_p2_accent: "können wir alles entwickeln und herstellen, was Sie brauchen.",
+    parts_more: "… und mehr",
+    family_label: "Unsere Familie", family_title: "Fotoalbum & Reisen",
+    family_p1: "Aufgewachsen in der kalifornischen Biker-Kultur wissen wir, dass die Menschen, mit denen wir fahren, genauso wichtig sind wie das, worauf wir fahren.",
+    family_p2: "Wir umgeben uns gerne mit Gleichgesinnten, die gerne mit dem Motorrad reisen und wissen, was Freiheit bedeutet. Deshalb werden die meisten unserer Kunden zur Familie.",
+    family_quote: '"Wenn Sie das erklaert bekommen muessen - werden Sie es wahrscheinlich nicht verstehen."',
+    family_btn: "Reise Galerie",
+    contact_label: "Kontakt", contact_title: "Lassen Sie uns Ihren", contact_title2: "Traum verwirklichen.",
+    contact_desc: "Kontaktieren Sie uns zu Ihrer Zeit und wir helfen Ihnen, Ihre Ideen in die Realität umzusetzen.",
+    contact_write: "Schreiben Sie uns", contact_call: "Anrufen",
+    contact_address: "29670 Marbella, Málaga, Spanien",
+    footer_rights: "© 2020 Chopper Doctors World — 29670 Marbella, Málaga, Spanien",
+    footer_terms: "Nutzungsbedingungen",
+    modal_order: "Ähnliches Projekt bestellen",
+  },
+  ru: {
+    nav_bikes: "Мотоциклы", nav_garage: "Гараж", nav_parts: "Запчасти", nav_family: "Семья",
+    nav_contact: "Связаться",
+    hero_badge: "Добро пожаловать в мир Chopper Doctors",
+    hero_slogan: "«Создан для езды» — это не просто слоган, это образ жизни",
+    hero_desc: "Благодаря более чем 30-летнему опыту, Chopper Doctors производит чопперы, которые сочетают американский стиль с тщательностью швейцарского качества и традициями старой школы.",
+    hero_btn_portfolio: "Смотреть мотоциклы", hero_btn_contact: "Связаться с нами",
+    stats_years: "лет опыта", stats_projects: "проектов", stats_certified: "сертифицировано H-D", stats_passion: "страсть к делу",
+    portfolio_label: "Кастомные мотоциклы", portfolio_title: "Мотоцикл Галерея",
+    portfolio_desc: "Мы производим мотоциклы, которые существуют не только для восхищения, но и конечно для поездок. Бескомпромиссный чоппер, созданный для осуществления вашей мечты.",
+    cat_all: "Все работы", cat_choppers: "Чопперы", cat_bobbers: "Бобберы", cat_restoration: "Реставрация", cat_tuning: "Тюнинг", cat_custom: "Кастом",
+    garage_label: "Гараж Harley", garage_title: "Кастомизация, Сервис и Ремонт",
+    garage_p1: "Ваш байк является вашим отражением, и мы можем помочь вам со всем чем угодно, когда дело доходит до кастомизации. Помогая воплотить мотоцикл вашей мечты, мы предложим вам не только стиль, но и отличные ездовые качества.",
+    garage_p2: "Мы сертифицированы Harley-Davidson, с многочисленными степенями MMI, и мы можем удовлетворить все ваши запросы по обслуживанию и ремонту.",
+    garage_custom: "Кастомизация", garage_service: "Сервис и ТО", garage_electric: "Электрика", garage_warranty: "Гарантия H-D",
+    garage_btn: "Гараж Галерея",
+    parts_label: "Запчасти и комплектующие", parts_title: "Новые и специально разработанные детали",
+    parts_p1: "Когда речь идет о запасных частях, мы сочетаем новейшие технологии с лучшими характеристиками и высочайшим качеством, для обеспечения вашей беспроблемной и приятной поездки.",
+    parts_p2: "Мы работаем только с лучшими в мире дистрибьюторами и производителями запчастей. Если то, что вы ищете, ещё не произведено —",
+    parts_p2_accent: "мы можем разработать и изготовить всё, что вам нужно.",
+    parts_more: "… и более",
+    family_label: "Наша семья", family_title: "Фотоальбом & путешествия",
+    family_p1: "Взрослея на калифорнийской культуре байкеров, мы знаем, что люди, с которыми мы ездим, так же важны, как и то, на чём мы ездим.",
+    family_p2: "Мы предпочитаем окружать себя единомышленниками, которым нравится путешествовать на мотоцикле, и которые знают, что такое свобода. Именно поэтому большинство наших клиентов становятся семьей.",
+    family_quote: "«Если вам нужно это объяснять — вы такое вряд ли поймёте.»",
+    family_btn: "Галерея путешествий",
+    contact_label: "Контакты", contact_title: "Воплотим вашу", contact_title2: "мечту.",
+    contact_desc: "Свяжитесь с нами, когда вам будет удобно, и мы поможем воплотить ваши идеи в жизнь.",
+    contact_write: "Написать нам", contact_call: "Позвонить",
+    contact_address: "29670 Марбелья, Малага, Испания",
+    footer_rights: "© 2020 Chopper Doctors World — 29670 Марбелья, Малага, Испания",
+    footer_terms: "Условия использования",
+    modal_order: "Заказать похожий проект",
+  },
+  es: {
+    nav_bikes: "Motos", nav_garage: "Garaje", nav_parts: "Piezas", nav_family: "Familia",
+    nav_contact: "Contacto",
+    hero_badge: "Bienvenido al mundo de Chopper Doctors",
+    hero_slogan: "«Construida para rodar» — no es solo un eslogan, es un estilo de vida",
+    hero_desc: "Con más de 30 años de experiencia, Chopper Doctors fabrica choppers que combinan el estilo americano con la precisión de la calidad suiza y las tradiciones de la vieja escuela.",
+    hero_btn_portfolio: "Ver motocicletas", hero_btn_contact: "Contáctenos",
+    stats_years: "años de experiencia", stats_projects: "proyectos", stats_certified: "Certificado H-D", stats_passion: "pasión",
+    portfolio_label: "Motos Custom", portfolio_title: "Galería de Motos",
+    portfolio_desc: "Fabricamos motocicletas que existen no solo para admirar, sino también para montar. Un chopper sin compromisos, construido para hacer realidad tu sueño.",
+    cat_all: "Todos", cat_choppers: "Choppers", cat_bobbers: "Bobbers", cat_restoration: "Restauración", cat_tuning: "Tuning", cat_custom: "Custom",
+    garage_label: "Garaje Harley", garage_title: "Personalización, Servicio y Reparación",
+    garage_p1: "Tu moto es tu reflejo, y podemos ayudarte con todo lo relacionado con la personalización. Al ayudarte a hacer realidad la moto de tus sueños, te ofrecemos no solo estilo, sino también un excelente rendimiento de conducción.",
+    garage_p2: "Estamos certificados por Harley-Davidson, con numerosos títulos MMI, y podemos satisfacer todas sus solicitudes de servicio y reparación.",
+    garage_custom: "Personalización", garage_service: "Servicio y Mantenimiento", garage_electric: "Electricidad", garage_warranty: "Garantía H-D",
+    garage_btn: "Galería del Garaje",
+    parts_label: "Piezas y Componentes", parts_title: "Piezas Nuevas y de Diseño Especial",
+    parts_p1: "Cuando se trata de repuestos, combinamos la última tecnología con el mejor rendimiento y la más alta calidad para garantizar un viaje sin problemas y agradable.",
+    parts_p2: "Solo trabajamos con los mejores distribuidores y fabricantes del mundo. Si lo que buscas aún no se ha fabricado —",
+    parts_p2_accent: "podemos diseñar y fabricar todo lo que necesites.",
+    parts_more: "… y más",
+    family_label: "Nuestra Familia", family_title: "Álbum de Fotos & Viajes",
+    family_p1: "Creciendo en la cultura motera de California, sabemos que las personas con las que montamos son tan importantes como lo que montamos.",
+    family_p2: "Preferimos rodearnos de personas afines que aman viajar en moto y que saben lo que es la libertad. Por eso la mayoría de nuestros clientes se convierten en familia.",
+    family_quote: "«Si necesitas que te lo expliquen — probablemente no lo entenderás.»",
+    family_btn: "Galería de Viajes",
+    contact_label: "Contacto", contact_title: "Hagamos realidad", contact_title2: "tu sueño.",
+    contact_desc: "Contáctenos cuando le sea conveniente y le ayudaremos a hacer realidad sus ideas.",
+    contact_write: "Escríbenos", contact_call: "Llamar",
+    contact_address: "29670 Marbella, Málaga, España",
+    footer_rights: "© 2020 Chopper Doctors World — 29670 Marbella, Málaga, España",
+    footer_terms: "Términos de uso",
+    modal_order: "Pedir proyecto similar",
+  },
+  nl: {
+    nav_bikes: "Motoren", nav_garage: "Garage", nav_parts: "Onderdelen", nav_family: "Familie",
+    nav_contact: "Contact",
+    hero_badge: "Welkom in de wereld van Chopper Doctors",
+    hero_slogan: "\"Gebouwd om te rijden\" — dat is niet alleen een slogan, het is een levensstijl",
+    hero_desc: "Met meer dan 30 jaar ervaring bouwt Chopper Doctors choppers die Amerikaans stijl combineren met Zwitserse kwaliteit en old-school traditie.",
+    hero_btn_portfolio: "Bekijk motoren", hero_btn_contact: "Neem contact op",
+    stats_years: "jaar ervaring", stats_projects: "projecten", stats_certified: "H-D Gecertificeerd", stats_passion: "passie",
+    portfolio_label: "Custom Motoren", portfolio_title: "Motor Galerij",
+    portfolio_desc: "Wij bouwen motorfietsen die niet alleen bestaan om te bewonderen, maar uiteraard ook om te rijden. Een compromisloze chopper, gebouwd om uw droom te vervullen.",
+    cat_all: "Alle werken", cat_choppers: "Choppers", cat_bobbers: "Bobbers", cat_restoration: "Restauratie", cat_tuning: "Tuning", cat_custom: "Custom",
+    garage_label: "Harley Garage", garage_title: "Customizing, Service & Reparatie",
+    garage_p1: "Uw motor is uw spiegelbeeld en wij kunnen u helpen met alles wat met customizing te maken heeft. Bij het realiseren van uw droommotor bieden wij niet alleen stijl, maar ook uitstekende rijprestaties.",
+    garage_p2: "Wij zijn Harley-Davidson gecertificeerd, met talrijke MMI-graden, en kunnen aan al uw service- en reparatieverzoeken voldoen.",
+    garage_custom: "Customizing", garage_service: "Service & Onderhoud", garage_electric: "Elektrisch", garage_warranty: "H-D Garantie",
+    garage_btn: "Garage Galerij",
+    parts_label: "Onderdelen & Componenten", parts_title: "Nieuwe & Speciaal Ontworpen Onderdelen",
+    parts_p1: "Als het om reserveonderdelen gaat, combineren wij de nieuwste technologie met de beste prestaties en de hoogste kwaliteit voor een probleemloze en plezierige rit.",
+    parts_p2: "Wij werken alleen met de beste distributeurs en fabrikanten ter wereld. Als wat u zoekt nog niet is gefabriceerd —",
+    parts_p2_accent: "kunnen wij alles ontwerpen en bouwen wat u nodig heeft.",
+    parts_more: "… en meer",
+    family_label: "Onze Familie", family_title: "Fotoalbum & Reizen",
+    family_p1: "Opgegroeid in de Californische bikercultuur weten wij dat de mensen met wie wij rijden net zo belangrijk zijn als waarop wij rijden.",
+    family_p2: "Wij omringen ons liever met gelijkgestemden die graag op de motor reizen en die weten wat vrijheid is. Daarom worden de meeste van onze klanten familie.",
+    family_quote: "\"Als je het uitgelegd moet krijgen — zul je het waarschijnlijk niet begrijpen.\"",
+    family_btn: "Reis Galerij",
+    contact_label: "Contact", contact_title: "Laten we uw", contact_title2: "droom waarmaken.",
+    contact_desc: "Neem contact met ons op wanneer het u uitkomt en wij helpen u uw ideeën tot werkelijkheid te maken.",
+    contact_write: "Schrijf ons", contact_call: "Bellen",
+    contact_address: "29670 Marbella, Málaga, Spanje",
+    footer_rights: "© 2020 Chopper Doctors World — 29670 Marbella, Málaga, Spanje",
+    footer_terms: "Gebruiksvoorwaarden",
+    modal_order: "Vergelijkbaar project bestellen",
+  },
+};
+
 const HERO_IMG = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/files/1ac2c649-fc84-4148-b681-1295400d49de.jpg";
 const GALLERY_IMG_1 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/files/ebf1bd39-6f18-4554-86fd-105700fa195a.jpg";
 const GALLERY_IMG_2 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/files/a27d7da8-6b03-48a2-a10b-0b8e71786a2b.jpg";
@@ -38,15 +221,7 @@ const PHOTO_31 = "https://cdn.poehali.dev/files/380bf8c5-0732-4d98-baa8-2eef8811
 const PHOTO_32 = "https://cdn.poehali.dev/files/de849e6d-9574-49a9-9206-1f12cb0c9fb8.jpg";
 const PHOTO_33 = "https://cdn.poehali.dev/files/68fdedb7-e8fd-4f2b-b474-def004fadd55.jpg";
 
-const NAV_LINKS = [
-  { id: "home", label: "Главная" },
-  { id: "portfolio", label: "Мотоциклы" },
-  { id: "garage", label: "Гараж" },
-  { id: "parts", label: "Запчасти" },
-  { id: "family", label: "Семья" },
-];
 
-const CATEGORIES = ["Все работы", "Чопперы", "Бобберы", "Реставрация", "Тюнинг", "Кастом"];
 
 const PORTFOLIO_ITEMS = [
   { id: 1, title: "Iron Skull Chopper", category: "Чопперы", year: "2024", img: HERO_IMG, desc: "Полная сборка с нуля. Двигатель S&S 124\", рама на заказ, хардтейл." },
@@ -99,10 +274,10 @@ const PARTS_BRANDS = [
 ];
 
 const STATS = [
-  { value: "30+", label: "лет опыта" },
-  { value: "340+", label: "проектов" },
-  { value: "100%", label: "сертифицировано H-D" },
-  { value: "∞", label: "страсть к делу" },
+  { value: "30+", key: "stats_years" },
+  { value: "340+", key: "stats_projects" },
+  { value: "100%", key: "stats_certified" },
+  { value: "∞", key: "stats_passion" },
 ];
 
 function useInView(threshold = 0.15) {
@@ -143,8 +318,12 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 const Index = () => {
+  const [lang, setLang] = useState<Lang>("en");
+  const [langOpen, setLangOpen] = useState(false);
+  const t = (key: string) => TRANSLATIONS[lang][key] ?? key;
+
   const [activeSection, setActiveSection] = useState("home");
-  const [activeCategory, setActiveCategory] = useState("Все работы");
+  const [activeCategory, setActiveCategory] = useState(TRANSLATIONS[lang].cat_all);
   const [menuOpen, setMenuOpen] = useState(false);
   const [selectedWork, setSelectedWork] = useState<typeof PORTFOLIO_ITEMS[0] | null>(null);
 
@@ -155,9 +334,17 @@ const Index = () => {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
-  const filteredPortfolio = activeCategory === "Все работы"
+  const categories = [t("cat_all"), t("cat_choppers"), t("cat_bobbers"), t("cat_restoration"), t("cat_tuning"), t("cat_custom")];
+
+  const filteredPortfolio = activeCategory === t("cat_all")
     ? PORTFOLIO_ITEMS
-    : PORTFOLIO_ITEMS.filter(item => item.category === activeCategory);
+    : PORTFOLIO_ITEMS.filter(item => {
+        const catMap: Record<string, string> = {
+          [t("cat_choppers")]: "Чопперы", [t("cat_bobbers")]: "Бобберы",
+          [t("cat_restoration")]: "Реставрация", [t("cat_tuning")]: "Тюнинг", [t("cat_custom")]: "Кастом",
+        };
+        return item.category === (catMap[activeCategory] || activeCategory);
+      });
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -174,8 +361,11 @@ const Index = () => {
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-7">
-            {NAV_LINKS.map(link => (
+          <div className="hidden md:flex items-center gap-6">
+            {[
+              { id: "portfolio", key: "nav_bikes" }, { id: "garage", key: "nav_garage" },
+              { id: "parts", key: "nav_parts" }, { id: "family", key: "nav_family" },
+            ].map(link => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
@@ -183,31 +373,88 @@ const Index = () => {
                   activeSection === link.id ? "text-fire" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
-                {link.label}
+                {t(link.key)}
               </button>
             ))}
             <button
               onClick={() => scrollTo("contact")}
               className="font-display text-sm tracking-widest uppercase px-5 py-2 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
             >
-              Связаться
+              {t("nav_contact")}
             </button>
+
+            {/* Language switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1.5 px-3 py-1.5 border border-border rounded-sm text-muted-foreground hover:border-fire/50 hover:text-foreground transition-all font-body text-sm"
+              >
+                <span>{LANGUAGES.find(l => l.code === lang)?.flag}</span>
+                <span className="font-display text-xs tracking-widest">{lang.toUpperCase()}</span>
+                <Icon name="ChevronDown" size={12} />
+              </button>
+              {langOpen && (
+                <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-sm overflow-hidden z-50 min-w-[100px]">
+                  {LANGUAGES.map(l => (
+                    <button
+                      key={l.code}
+                      onClick={() => { setLang(l.code); setLangOpen(false); setActiveCategory(TRANSLATIONS[l.code].cat_all); }}
+                      className={`w-full flex items-center gap-2 px-3 py-2 font-body text-sm transition-colors ${
+                        lang === l.code ? "text-fire bg-fire/10" : "text-muted-foreground hover:text-foreground hover:bg-secondary"
+                      }`}
+                    >
+                      <span>{l.flag}</span>
+                      <span className="font-display text-xs tracking-widest">{l.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           </div>
 
-          <button className="md:hidden text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
-            <Icon name={menuOpen ? "X" : "Menu"} size={24} />
-          </button>
+          <div className="md:hidden flex items-center gap-3">
+            {/* Mobile lang */}
+            <div className="relative">
+              <button
+                onClick={() => setLangOpen(!langOpen)}
+                className="flex items-center gap-1 px-2 py-1 border border-border rounded-sm text-muted-foreground font-body text-xs"
+              >
+                <span>{LANGUAGES.find(l => l.code === lang)?.flag}</span>
+                <span>{lang.toUpperCase()}</span>
+              </button>
+              {langOpen && (
+                <div className="absolute right-0 top-full mt-1 bg-card border border-border rounded-sm overflow-hidden z-50">
+                  {LANGUAGES.map(l => (
+                    <button
+                      key={l.code}
+                      onClick={() => { setLang(l.code); setLangOpen(false); setActiveCategory(TRANSLATIONS[l.code].cat_all); }}
+                      className="w-full flex items-center gap-2 px-3 py-2 font-body text-xs text-muted-foreground hover:text-fire"
+                    >
+                      <span>{l.flag}</span><span>{l.label}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+            <button className="text-foreground" onClick={() => setMenuOpen(!menuOpen)}>
+              <Icon name={menuOpen ? "X" : "Menu"} size={24} />
+            </button>
+          </div>
         </div>
 
         {menuOpen && (
           <div className="md:hidden border-t border-border bg-background/95 backdrop-blur-md px-6 py-4 flex flex-col gap-4">
-            {NAV_LINKS.map(link => (
+            {[
+              { id: "portfolio", key: "nav_bikes" }, { id: "garage", key: "nav_garage" },
+              { id: "parts", key: "nav_parts" }, { id: "family", key: "nav_family" },
+              { id: "contact", key: "nav_contact" },
+            ].map(link => (
               <button
                 key={link.id}
                 onClick={() => scrollTo(link.id)}
                 className="font-display text-sm tracking-widest uppercase text-left text-muted-foreground hover:text-fire transition-colors"
               >
-                {link.label}
+                {t(link.key)}
               </button>
             ))}
           </div>
@@ -229,7 +476,7 @@ const Index = () => {
               style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
             >
               <div className="w-1.5 h-1.5 rounded-full bg-fire animate-pulse" />
-              <span className="font-body text-xs text-fire tracking-widest uppercase">Добро пожаловать в мир Chopper Doctors</span>
+              <span className="font-body text-xs text-fire tracking-widest uppercase">{t("hero_badge")}</span>
             </div>
 
             <h1
@@ -245,14 +492,14 @@ const Index = () => {
               className="font-display text-xl md:text-2xl text-fire/90 tracking-wide mb-4 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.55s", animationFillMode: "forwards" }}
             >
-              «Создан для езды» — это не просто слоган, это образ жизни
+              {t("hero_slogan")}
             </p>
 
             <p
               className="font-body text-base text-muted-foreground leading-relaxed mb-10 max-w-xl opacity-0 animate-fade-in"
               style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
             >
-              Благодаря более чем 30-летнему опыту, Chopper Doctors производит чопперы, которые сочетают американский стиль с тщательностью швейцарского качества и традициями старой школы.
+              {t("hero_desc")}
             </p>
 
             <div
@@ -264,13 +511,13 @@ const Index = () => {
                 className="font-display text-sm tracking-widest uppercase px-8 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
                 style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.4)" }}
               >
-                Смотреть мотоциклы
+                {t("hero_btn_portfolio")}
               </button>
               <button
                 onClick={() => scrollTo("contact")}
                 className="font-display text-sm tracking-widest uppercase px-8 py-4 border border-foreground/25 text-foreground hover:border-fire hover:text-fire transition-all rounded-sm"
               >
-                Связаться с нами
+                {t("hero_btn_contact")}
               </button>
             </div>
           </div>
@@ -289,7 +536,7 @@ const Index = () => {
             {STATS.map((stat, i) => (
               <AnimatedSection key={i} className="text-center">
                 <div className="font-display text-4xl md:text-5xl text-fire mb-1">{stat.value}</div>
-                <div className="font-body text-sm text-muted-foreground uppercase tracking-widest">{stat.label}</div>
+                <div className="font-body text-sm text-muted-foreground uppercase tracking-widest">{t(stat.key)}</div>
               </AnimatedSection>
             ))}
           </div>
@@ -302,16 +549,13 @@ const Index = () => {
           <AnimatedSection>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
               <div>
-                <SectionLabel>Кастомные мотоциклы</SectionLabel>
-                <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-4">Мотоцикл Галерея</h2>
-                <p className="font-body text-muted-foreground max-w-2xl leading-relaxed">
-                  Мы производим мотоциклы, которые существуют не только для восхищения, но и конечно для поездок.
-                  Бескомпромиссный чоппер, созданный для осуществления вашей мечты.
-                </p>
+                <SectionLabel>{t("portfolio_label")}</SectionLabel>
+                <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-4">{t("portfolio_title")}</h2>
+                <p className="font-body text-muted-foreground max-w-2xl leading-relaxed">{t("portfolio_desc")}</p>
               </div>
             </div>
             <div className="flex flex-wrap gap-2 mb-10">
-              {CATEGORIES.map(cat => (
+              {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setActiveCategory(cat)}
@@ -370,26 +614,24 @@ const Index = () => {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <AnimatedSection>
-              <SectionLabel>Гараж Harley</SectionLabel>
-              <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">
-                Кастомизация, Сервис и Ремонт
-              </h2>
-              <p className="font-body text-muted-foreground leading-relaxed mb-5">
-                Ваш байк является вашим отражением, и мы можем помочь вам со всем чем угодно, когда дело доходит до кастомизации. Помогая воплотить мотоцикл вашей мечты, мы предложим вам не только стиль, но и отличные ездовые качества.
-              </p>
+              <SectionLabel>{t("garage_label")}</SectionLabel>
+              <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">{t("garage_title")}</h2>
+              <p className="font-body text-muted-foreground leading-relaxed mb-5">{t("garage_p1")}</p>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                Мы <span className="text-fire font-medium">сертифицированы Harley-Davidson</span>, с многочисленными степенями MMI, и мы можем удовлетворить все ваши запросы по обслуживанию и ремонту.
+                {t("garage_p2").replace("Harley-Davidson", "")}
+                <span className="text-fire font-medium">Harley-Davidson</span>
+                {t("garage_p2").includes("Harley-Davidson") ? "" : ""}
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
-                  { icon: "Wrench", text: "Кастомизация" },
-                  { icon: "Settings", text: "Сервис и ТО" },
-                  { icon: "Zap", text: "Электрика" },
-                  { icon: "Shield", text: "Гарантия H-D" },
+                  { icon: "Wrench", key: "garage_custom" },
+                  { icon: "Settings", key: "garage_service" },
+                  { icon: "Zap", key: "garage_electric" },
+                  { icon: "Shield", key: "garage_warranty" },
                 ].map((item) => (
-                  <div key={item.text} className="flex items-center gap-3 p-3 border border-border rounded-sm bg-background">
+                  <div key={item.key} className="flex items-center gap-3 p-3 border border-border rounded-sm bg-background">
                     <Icon name={item.icon} size={16} className="text-fire flex-shrink-0" />
-                    <span className="font-body text-sm text-foreground">{item.text}</span>
+                    <span className="font-body text-sm text-foreground">{t(item.key)}</span>
                   </div>
                 ))}
               </div>
@@ -398,7 +640,7 @@ const Index = () => {
                 className="mt-8 font-display text-sm tracking-widest uppercase px-8 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
                 style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.35)" }}
               >
-                Гараж Галерея
+                {t("garage_btn")}
               </button>
             </AnimatedSection>
 
@@ -423,15 +665,11 @@ const Index = () => {
       <section id="parts" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <SectionLabel>Запчасти и комплектующие</SectionLabel>
-            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">
-              Новые и специально разработанные детали
-            </h2>
-            <p className="font-body text-muted-foreground leading-relaxed max-w-3xl mb-4">
-              Когда речь идет о запасных частях, мы сочетаем новейшие технологии с лучшими характеристиками и высочайшим качеством, для обеспечения вашей беспроблемной и приятной поездки.
-            </p>
+            <SectionLabel>{t("parts_label")}</SectionLabel>
+            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">{t("parts_title")}</h2>
+            <p className="font-body text-muted-foreground leading-relaxed max-w-3xl mb-4">{t("parts_p1")}</p>
             <p className="font-body text-muted-foreground leading-relaxed max-w-3xl mb-12">
-              Мы работаем только с лучшими в мире дистрибьюторами и производителями запчастей. Если то, что вы ищете, ещё не произведено — <span className="text-fire">мы можем разработать и изготовить всё, что вам нужно.</span>
+              {t("parts_p2")} <span className="text-fire">{t("parts_p2_accent")}</span>
             </p>
           </AnimatedSection>
 
@@ -446,7 +684,7 @@ const Index = () => {
                 </div>
               ))}
               <div className="px-4 py-2 border border-fire/30 rounded-sm font-body text-sm text-fire bg-fire/5">
-                … и более
+                {t("parts_more")}
               </div>
             </div>
           </AnimatedSection>
@@ -473,24 +711,16 @@ const Index = () => {
             </AnimatedSection>
 
             <AnimatedSection>
-              <SectionLabel>Наша семья</SectionLabel>
-              <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">
-                Фотоальбом & путешествия
-              </h2>
-              <p className="font-body text-muted-foreground leading-relaxed mb-5">
-                Взрослея на калифорнийской культуре байкеров, мы знаем, что люди, с которыми мы ездим, так же важны, как и то, на чём мы ездим.
-              </p>
-              <p className="font-body text-muted-foreground leading-relaxed mb-5">
-                Мы предпочитаем окружать себя единомышленниками, которым нравится путешествовать на мотоцикле, и которые знают, что такое свобода. Именно поэтому большинство наших клиентов становятся семьей.
-              </p>
-              <p className="font-body text-fire italic text-lg leading-relaxed">
-                «Если вам нужно это объяснять — вы такое вряд ли поймёте.»
-              </p>
+              <SectionLabel>{t("family_label")}</SectionLabel>
+              <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">{t("family_title")}</h2>
+              <p className="font-body text-muted-foreground leading-relaxed mb-5">{t("family_p1")}</p>
+              <p className="font-body text-muted-foreground leading-relaxed mb-5">{t("family_p2")}</p>
+              <p className="font-body text-fire italic text-lg leading-relaxed">{t("family_quote")}</p>
               <button
                 onClick={() => scrollTo("contact")}
                 className="mt-8 font-display text-sm tracking-widest uppercase px-8 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm"
               >
-                Галерея путешествий
+                {t("family_btn")}
               </button>
             </AnimatedSection>
           </div>
@@ -501,34 +731,34 @@ const Index = () => {
       <section id="contact" className="py-24 px-6 relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at center, hsl(0 90% 45% / 0.06) 0%, transparent 65%)" }} />
         <AnimatedSection className="max-w-3xl mx-auto text-center relative z-10">
-          <SectionLabel>Контакты</SectionLabel>
+          <SectionLabel>{t("contact_label")}</SectionLabel>
           <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tight mb-4">
-            Воплотим вашу<br />
-            <span className="text-fire">мечту.</span>
+            {t("contact_title")}<br />
+            <span className="text-fire">{t("contact_title2")}</span>
           </h2>
           <p className="font-body text-muted-foreground mb-10 max-w-lg mx-auto leading-relaxed">
-            Свяжитесь с нами, когда вам будет удобно, и мы поможем воплотить ваши идеи в жизнь.
+            {t("contact_desc")}
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <button
               className="font-display text-sm tracking-widest uppercase px-10 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
               style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.4)" }}
             >
-              Написать нам
+              {t("contact_write")}
             </button>
             <a
               href="tel:+1234567890"
               className="font-display text-sm tracking-widest uppercase px-10 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm flex items-center gap-2"
             >
               <Icon name="Phone" size={16} />
-              Позвонить
+              {t("contact_call")}
             </a>
           </div>
 
           <div className="flex flex-col items-center gap-2 text-muted-foreground">
             <div className="flex items-center gap-2 text-sm font-body">
               <Icon name="MapPin" size={14} className="text-fire" />
-              29670 Марбелья, Малага, Испания
+              {t("contact_address")}
             </div>
           </div>
         </AnimatedSection>
@@ -555,8 +785,8 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground font-body">
-            <p>© 2020 Chopper Doctors World — 29670 Марбелья, Малага, Испания</p>
-            <button className="hover:text-fire transition-colors">Условия использования сайта</button>
+            <p>{t("footer_rights")}</p>
+            <button className="hover:text-fire transition-colors">{t("footer_terms")}</button>
           </div>
         </div>
       </footer>
@@ -593,7 +823,7 @@ const Index = () => {
                 onClick={() => { setSelectedWork(null); scrollTo("contact"); }}
                 className="font-display text-sm tracking-widest uppercase px-6 py-3 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
               >
-                Заказать похожий проект
+                {t("modal_order")}
               </button>
             </div>
           </div>
