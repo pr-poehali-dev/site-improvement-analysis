@@ -18,6 +18,19 @@ const PHOTO_11 = "https://cdn.poehali.dev/files/be1d996c-3fb3-4451-91a3-d23d681e
 const PHOTO_12 = "https://cdn.poehali.dev/files/6d8b44ad-834a-47bf-999c-db9faccac504.jpg";
 const PHOTO_13 = "https://cdn.poehali.dev/files/bef55930-8d01-476f-8c0b-04abb829049b.jpg";
 const PHOTO_14 = "https://cdn.poehali.dev/files/3fae86bd-bc9e-4362-b537-91b93f66d782.jpg";
+const PHOTO_15 = "https://cdn.poehali.dev/files/e1d2cf42-a8ee-4dab-a88c-6685fd690e12.jpg";
+const PHOTO_16 = "https://cdn.poehali.dev/files/75f281aa-51e6-4944-854f-e5bd557c2fa0.jpg";
+const PHOTO_17 = "https://cdn.poehali.dev/files/6d234d12-7c15-4802-b0b5-49cfa73f6fa3.jpg";
+const PHOTO_18 = "https://cdn.poehali.dev/files/6c4fba4e-214e-4df7-a29d-c44ebe80ec95.jpg";
+const PHOTO_19 = "https://cdn.poehali.dev/files/3ecf41ed-6d89-40ea-835c-6e27570ca1b9.jpg";
+const PHOTO_20 = "https://cdn.poehali.dev/files/db1d40c1-5eaf-473c-bf4b-a6f593f3c0a1.jpg";
+const PHOTO_21 = "https://cdn.poehali.dev/files/7a8cc7e5-d87e-47be-8770-9f66626bff24.png";
+const PHOTO_22 = "https://cdn.poehali.dev/files/e98e2014-b919-436f-bb55-8dba0b73c1e4.jpg";
+const PHOTO_23 = "https://cdn.poehali.dev/files/8706315d-d6ad-446d-b5c5-6f48f9385945.jpg";
+const PHOTO_24 = "https://cdn.poehali.dev/files/e10c22d0-9e12-4ba3-af7b-77a4b11f308e.jpg";
+const PHOTO_25 = "https://cdn.poehali.dev/files/65a081b1-f74a-48bf-87be-18a2da01a939.jpg";
+const PHOTO_26 = "https://cdn.poehali.dev/files/dedb8931-8ae6-4f9a-a4fc-fb252c5a201d.jpg";
+const PHOTO_27 = "https://cdn.poehali.dev/files/63588115-c711-42ed-8175-5c80b5c31cea.jpg";
 
 const NAV_LINKS = [
   { id: "home", label: "Главная" },
@@ -50,6 +63,19 @@ const PORTFOLIO_ITEMS = [
   { id: 18, title: "Long Fork Fire", category: "Чопперы", year: "2023", img: PHOTO_12, desc: "Длинновилочный чоппер с огненным аэрографом. Спицованные колёса 300+, рама на заказ." },
   { id: 19, title: "Gold Flame Rider", category: "Кастом", year: "2022", img: PHOTO_13, desc: "Красно-золотой кастом с мастером. Пламенный бак, хромированный V-twin, широкое заднее колесо." },
   { id: 20, title: "Vineyard Cruiser", category: "Чопперы", year: "2022", img: PHOTO_14, desc: "Чёрный хардтейл на фоне виноградников. Красный аэрограф, хромированный двигатель, шоу-класс." },
+  { id: 21, title: "Black Tribal Chopper", category: "Чопперы", year: "2025", img: PHOTO_15, desc: "Чёрный шоу-чоппер с трибал-аэрографом на колёсах. Открытый V-twin, хром, студийная съёмка." },
+  { id: 22, title: "Steel Blue Bobber", category: "Бобберы", year: "2025", img: PHOTO_16, desc: "Стальной голубой боббер у ретро-гаража. Золотые детали двигателя, классическая вилка." },
+  { id: 23, title: "Sky Blue Star", category: "Кастом", year: "2024", img: PHOTO_17, desc: "Голубой кастом со звёздой на двигателе. Спицованные колёса, двухцветная рама, мощная подвеска." },
+  { id: 24, title: "Blue Star Pro", category: "Чопперы", year: "2024", img: PHOTO_18, desc: "Синий чоппер со звёздным мотивом и золотыми спицами. Студийный шоу-класс, длинная вилка." },
+  { id: 25, title: "Midland Black & Red", category: "Бобберы", year: "2024", img: PHOTO_19, desc: "Чёрно-красный боббер Midland Choppers. Матовые поверхности, красная рама, современный стиль." },
+  { id: 26, title: "Candy Red Show Bike", category: "Тюнинг", year: "2023", img: PHOTO_20, desc: "Вишнёво-красный шоу-байк на подиуме. Хромированный V-twin, выставочный уровень отделки." },
+  { id: 27, title: "Midland Ghost Flames", category: "Бобберы", year: "2023", img: PHOTO_21, desc: "Чёрный боббер с серыми ghost-flames. Матовая отделка, кованые диски, лаконичный дизайн." },
+  { id: 28, title: "Deep Red Custom", category: "Кастом", year: "2023", img: PHOTO_22, desc: "Тёмно-красный кастом с хромированным V-twin. Массивный бак, чистые линии, звёздный акцент." },
+  { id: 29, title: "Orange & White Cruiser", category: "Чопперы", year: "2022", img: PHOTO_23, desc: "Оранжево-белый чоппер в чистом студийном стиле. Хром, мощный двигатель, широкие колёса." },
+  { id: 30, title: "Silver Eagle", category: "Кастом", year: "2022", img: PHOTO_24, desc: "Серебристый кастом с орлиным аэрографом. Хромированные детали, роскошные колёса, дорожный класс." },
+  { id: 31, title: "Gold Bagger", category: "Тюнинг", year: "2022", img: PHOTO_25, desc: "Золотисто-бордовый бэггер с кастомной покраской. Хром, кофры, выставочная работа." },
+  { id: 32, title: "Red Muscle Chopper", category: "Чопперы", year: "2021", img: PHOTO_26, desc: "Красный мускульный чоппер на лужайке. Хромированный V-twin без крышек, хардтейл, шоу-формат." },
+  { id: 33, title: "Country Road Star", category: "Кастом", year: "2021", img: PHOTO_27, desc: "Чёрный кастом с огненным аэрографом на дороге. Звезда на двигателе, хром, осенний пейзаж." },
 ];
 
 const PARTS_BRANDS = [
