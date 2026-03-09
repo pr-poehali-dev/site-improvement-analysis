@@ -31,6 +31,12 @@ const PHOTO_24 = "https://cdn.poehali.dev/files/e10c22d0-9e12-4ba3-af7b-77a4b11f
 const PHOTO_25 = "https://cdn.poehali.dev/files/65a081b1-f74a-48bf-87be-18a2da01a939.jpg";
 const PHOTO_26 = "https://cdn.poehali.dev/files/dedb8931-8ae6-4f9a-a4fc-fb252c5a201d.jpg";
 const PHOTO_27 = "https://cdn.poehali.dev/files/63588115-c711-42ed-8175-5c80b5c31cea.jpg";
+const PHOTO_28 = "https://cdn.poehali.dev/files/01ed108d-010c-4ceb-98c7-763faed979cf.jpg";
+const PHOTO_29 = "https://cdn.poehali.dev/files/1b2f7c39-1183-481d-acec-9eccc7f238ce.jpg";
+const PHOTO_30 = "https://cdn.poehali.dev/files/12de10aa-0eaf-4f35-aa88-2ba678443cce.jpg";
+const PHOTO_31 = "https://cdn.poehali.dev/files/380bf8c5-0732-4d98-baa8-2eef8811be79.jpg";
+const PHOTO_32 = "https://cdn.poehali.dev/files/de849e6d-9574-49a9-9206-1f12cb0c9fb8.jpg";
+const PHOTO_33 = "https://cdn.poehali.dev/files/68fdedb7-e8fd-4f2b-b474-def004fadd55.jpg";
 
 const NAV_LINKS = [
   { id: "home", label: "Главная" },
@@ -76,6 +82,12 @@ const PORTFOLIO_ITEMS = [
   { id: 31, title: "Gold Bagger", category: "Тюнинг", year: "2022", img: PHOTO_25, desc: "Золотисто-бордовый бэггер с кастомной покраской. Хром, кофры, выставочная работа." },
   { id: 32, title: "Red Muscle Chopper", category: "Чопперы", year: "2021", img: PHOTO_26, desc: "Красный мускульный чоппер на лужайке. Хромированный V-twin без крышек, хардтейл, шоу-формат." },
   { id: 33, title: "Country Road Star", category: "Кастом", year: "2021", img: PHOTO_27, desc: "Чёрный кастом с огненным аэрографом на дороге. Звезда на двигателе, хром, осенний пейзаж." },
+  { id: 34, title: "CDW Signature Red", category: "Чопперы", year: "2025", img: PHOTO_28, desc: "Фирменный чоппер Chopper Doctors World. Красно-чёрный окрас, паук на двигателе, студийная съёмка." },
+  { id: 35, title: "Crimson Iron Cross", category: "Чопперы", year: "2024", img: PHOTO_29, desc: "Красный кастом с железным крестом. Серебряный аэрограф, хром, деревянный амбар на фоне." },
+  { id: 36, title: "Desert Green Flame", category: "Бобберы", year: "2024", img: PHOTO_30, desc: "Чёрный боббер с зелёным огнём на баке. Спицованные колёса, открытый V-twin, пустынная дорога." },
+  { id: 37, title: "Full Flame Orange", category: "Чопперы", year: "2023", img: PHOTO_31, desc: "Полностью огненный оранжевый чоппер. Аэрограф на всех панелях, хром, пустынная трасса." },
+  { id: 38, title: "Blue Skull Trike", category: "Тюнинг", year: "2023", img: PHOTO_32, desc: "Кастомный трайк с черепами и бирюзовым аэрографом. Хром везде, три колеса, мощный V-twin." },
+  { id: 39, title: "Bordeaux Estate", category: "Чопперы", year: "2022", img: PHOTO_33, desc: "Бордовый чоппер с гравировкой на баке у особняка. Хром, широкие колёса, европейский стиль." },
 ];
 
 const PARTS_BRANDS = [
