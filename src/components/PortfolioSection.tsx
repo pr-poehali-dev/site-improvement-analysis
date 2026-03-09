@@ -105,12 +105,19 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                   className="group relative overflow-hidden rounded-sm cursor-pointer bg-card border border-border hover:border-fire/40 transition-all duration-300"
                   onClick={() => setSelectedWork(item)}
                 >
-                  <div className="aspect-[4/3] overflow-hidden">
+                  <div className="aspect-[4/3] overflow-hidden relative">
                     <img
                       src={item.img}
                       alt={item.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
+                    {item.video && (
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-background/80 backdrop-blur-sm flex items-center justify-center border border-fire/60">
+                          <Icon name="Play" size={20} className="text-fire ml-1" />
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-70 group-hover:opacity-85 transition-opacity" />
                   <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
@@ -119,6 +126,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                         {item.category}
                       </span>
                       <span className="font-body text-xs text-muted-foreground">{item.year}</span>
+                      {item.video && <Icon name="Video" size={12} className="text-fire ml-1" />}
                     </div>
                     <h3 className="font-display text-xl uppercase tracking-wide text-foreground mb-1">{item.title}</h3>
                     <p className="font-body text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 line-clamp-2">
@@ -145,11 +153,21 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
             className="max-w-2xl w-full bg-card border border-border rounded-sm overflow-hidden"
             onClick={e => e.stopPropagation()}
           >
-            <div className="aspect-video relative">
-              <img src={selectedWork.img} alt={selectedWork.title} className="w-full h-full object-cover" />
+            <div className="aspect-video relative bg-black">
+              {selectedWork.video ? (
+                <video
+                  src={selectedWork.video}
+                  poster={selectedWork.img}
+                  controls
+                  autoPlay
+                  className="w-full h-full object-contain"
+                />
+              ) : (
+                <img src={selectedWork.img} alt={selectedWork.title} className="w-full h-full object-cover" />
+              )}
               <button
                 onClick={() => setSelectedWork(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-foreground hover:text-fire transition-colors"
+                className="absolute top-4 right-4 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-foreground hover:text-fire transition-colors z-10"
               >
                 <Icon name="X" size={16} />
               </button>

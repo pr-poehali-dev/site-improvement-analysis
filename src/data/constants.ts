@@ -249,7 +249,17 @@ const PHOTO_37 = "https://cdn.poehali.dev/files/afa4a7e0-0744-47ca-9fd1-1a72d286
 const PHOTO_38 = "https://cdn.poehali.dev/files/b72504ab-31ef-46ea-b8ab-bdf45b5b9644.jpg";
 const PHOTO_39 = "https://cdn.poehali.dev/files/79dbfd2a-875e-4766-865d-e6cf6cced7d8.jpg";
 
-export const PORTFOLIO_ITEMS = [
+export type PortfolioItem = {
+  id: number;
+  title: string;
+  category: string;
+  year: string;
+  img: string;
+  desc: string;
+  video?: string;
+};
+
+export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 1, title: "Iron Skull Chopper", category: "Чопперы", year: "2024", img: HERO_IMG, desc: "Полная сборка с нуля. Двигатель S&S 124\", рама на заказ, хардтейл." },
   { id: 2, title: "Midnight Bobber", category: "Бобберы", year: "2024", img: GALLERY_IMG_1, desc: "Реставрация Triumph 1969 года. Полный перебор двигателя, новая электрика." },
   { id: 3, title: "Panhead Revival", category: "Реставрация", year: "2023", img: GALLERY_IMG_2, desc: "Восстановление Harley-Davidson Panhead 1952 года до заводского состояния." },
