@@ -206,9 +206,7 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
   },
 };
 
-const HERO_IMG = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/files/1ac2c649-fc84-4148-b681-1295400d49de.jpg";
-const GALLERY_IMG_1 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/files/ebf1bd39-6f18-4554-86fd-105700fa195a.jpg";
-const GALLERY_IMG_2 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/files/a27d7da8-6b03-48a2-a10b-0b8e71786a2b.jpg";
+
 const PHOTO_1 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/fe6da3f5-69fe-4b77-b401-319c0e2e02d4.jpg";
 export const PHOTO_2 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/62691b9e-c340-4e3f-8f8a-31efdf7a3559.jpg";
 export const PHOTO_3 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/4f2acc4e-1dc0-41a4-bf72-2ee08fb895c4.jpg";
@@ -318,12 +316,12 @@ export const STATS = [
 
 export const GARAGE_PHOTOS = {
   main: PHOTO_3,
-  left: GALLERY_IMG_2,
+  left: PHOTO_2,
   right: PHOTO_5,
 };
 
 export const FAMILY_PHOTOS = {
   top_left: PHOTO_4,
-  top_right: GALLERY_IMG_1,
-  bottom: PHOTO_1,
+  top_right: PHOTO_1,
+  bottom: PHOTO_2,
 };
