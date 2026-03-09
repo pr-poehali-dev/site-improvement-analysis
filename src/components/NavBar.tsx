@@ -27,13 +27,17 @@ export default function NavBar({
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-        <div className="flex items-center cursor-pointer" onClick={() => onScrollTo("home")}>
+      <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div className="flex items-center gap-3 cursor-pointer" onClick={() => onScrollTo("home")}>
           <img
             src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/logos/logo_transparent.png"
             alt="Chopper Doctors World"
-            className="h-16 w-16 object-contain"
+            className="h-20 w-20 object-contain"
           />
+          <div className="flex flex-col leading-none">
+            <span className="font-display text-xl tracking-widest uppercase text-foreground">Chopper Doctors</span>
+            <span className="font-display text-sm tracking-[0.3em] uppercase text-fire">World</span>
+          </div>
         </div>
 
         {/* Desktop */}
