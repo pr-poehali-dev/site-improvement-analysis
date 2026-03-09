@@ -17,7 +17,6 @@ const NAV_LINKS = [
   { id: "garage", key: "nav_garage" },
   { id: "parts", key: "nav_parts" },
   { id: "family", key: "nav_family" },
-  { id: "blog", key: "nav_blog" },
 ];
 
 export default function NavBar({

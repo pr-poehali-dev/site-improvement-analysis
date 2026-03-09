@@ -348,26 +348,13 @@ const Index = () => {
               <p className="font-body text-muted-foreground leading-relaxed mb-5">{t("family_p1")}</p>
               <p className="font-body text-muted-foreground leading-relaxed mb-5">{t("family_p2")}</p>
               <p className="font-body text-fire italic text-lg leading-relaxed">{t("family_quote")}</p>
-              <button
-                onClick={() => scrollTo("contact")}
-                className="mt-8 font-display text-sm tracking-widest uppercase px-8 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm"
-              >
-                {t("family_btn")}
-              </button>
             </AnimatedSection>
           </div>
-        </div>
-      </section>
 
-      {/* BLOG */}
-      <section id="blog" className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
-          <AnimatedSection>
+          <AnimatedSection className="mt-16">
             <SectionLabel>{t("blog_label")}</SectionLabel>
-            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-4">{t("blog_title")}</h2>
-            <p className="font-body text-muted-foreground max-w-2xl leading-relaxed mb-12">{t("blog_desc")}</p>
-          </AnimatedSection>
-          <AnimatedSection>
+            <h3 className="font-display text-3xl uppercase tracking-tight mb-4">{t("blog_title")}</h3>
+            <p className="font-body text-muted-foreground max-w-2xl leading-relaxed mb-8">{t("blog_desc")}</p>
             <BlogAlbum
               title={t("album_opening_title")}
               desc={t("album_opening_desc")}
