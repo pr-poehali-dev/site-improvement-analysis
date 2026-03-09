@@ -233,17 +233,21 @@ const Index = () => {
               {PARTS_BRANDS.map((brand) => (
                 <div
                   key={brand.name}
-                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-sm font-body text-sm text-muted-foreground hover:border-fire/50 hover:text-foreground transition-all cursor-default"
+                  title={brand.name}
+                  className="group/brand relative flex items-center gap-2 px-4 py-2 border border-border rounded-sm font-body text-sm text-muted-foreground hover:border-fire/50 hover:text-foreground transition-all cursor-default"
                 >
                   {brand.logo && (
                     <img
                       src={brand.logo}
                       alt={brand.name}
-                      className="w-5 h-5 object-contain rounded-sm opacity-70"
+                      className="w-10 h-10 object-contain rounded-sm opacity-70"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                     />
                   )}
                   {brand.name}
+                  <span className="pointer-events-none absolute -top-9 left-1/2 -translate-x-1/2 whitespace-nowrap bg-background border border-border text-foreground text-xs font-body px-2 py-1 rounded-sm opacity-0 group-hover/brand:opacity-100 transition-opacity duration-200 z-10">
+                    {brand.name}
+                  </span>
                 </div>
               ))}
               <div className="px-4 py-2 border border-fire/30 rounded-sm font-body text-sm text-fire bg-fire/5">
