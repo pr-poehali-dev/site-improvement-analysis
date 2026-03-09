@@ -232,10 +232,18 @@ const Index = () => {
             <div className="flex flex-wrap gap-3">
               {PARTS_BRANDS.map((brand) => (
                 <div
-                  key={brand}
-                  className="px-4 py-2 border border-border rounded-sm font-body text-sm text-muted-foreground hover:border-fire/50 hover:text-foreground transition-all cursor-default"
+                  key={brand.name}
+                  className="flex items-center gap-2 px-4 py-2 border border-border rounded-sm font-body text-sm text-muted-foreground hover:border-fire/50 hover:text-foreground transition-all cursor-default"
                 >
-                  {brand}
+                  {brand.logo && (
+                    <img
+                      src={brand.logo}
+                      alt={brand.name}
+                      className="w-5 h-5 object-contain rounded-sm opacity-70"
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                    />
+                  )}
+                  {brand.name}
                 </div>
               ))}
               <div className="px-4 py-2 border border-fire/30 rounded-sm font-body text-sm text-fire bg-fire/5">

@@ -299,12 +299,26 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 45, title: "Blue Woodpile", category: "Бобберы", year: "2022", img: PHOTO_39, desc: "Голубой боббер у поленницы дров. Хромированный двигатель, классические крылья, природный фон." },
 ];
 
-export const PARTS_BRANDS = [
-  "S&S", "Baker", "DNA", "Custom Chrome", "Motorcycle Storehouse",
-  "Parts Europe", "W&W", "Jims", "Performance Machine", "BDL",
-  "Vance and Hines", "Arlen Ness", "Carlini", "Wild1", "Kustom Tech",
-  "West Coast Choppers", "Thundercycle Design", "Paul Yaffe Bagger Nation",
-  "Red Neck Engineering",
+export const PARTS_BRANDS: { name: string; logo?: string }[] = [
+  { name: "S&S", logo: "https://logo.clearbit.com/sscycle.com" },
+  { name: "Baker", logo: "https://logo.clearbit.com/bakerdrivetrain.com" },
+  { name: "DNA", logo: "https://logo.clearbit.com/dnachopper.com" },
+  { name: "Custom Chrome", logo: "https://logo.clearbit.com/customchrome.com" },
+  { name: "Motorcycle Storehouse", logo: "https://logo.clearbit.com/motorcyclestorehouse.com" },
+  { name: "Parts Europe", logo: "https://logo.clearbit.com/parts-europe.com" },
+  { name: "W&W", logo: "https://logo.clearbit.com/wandw-cycles.com" },
+  { name: "Jims", logo: "https://logo.clearbit.com/jimsusa.com" },
+  { name: "Performance Machine", logo: "https://logo.clearbit.com/performancemachine.com" },
+  { name: "BDL", logo: "https://logo.clearbit.com/bdlusa.com" },
+  { name: "Vance and Hines", logo: "https://logo.clearbit.com/vanceandhines.com" },
+  { name: "Arlen Ness", logo: "https://logo.clearbit.com/arlenness.com" },
+  { name: "Carlini", logo: "https://logo.clearbit.com/carlinidesign.com" },
+  { name: "Wild1", logo: "https://logo.clearbit.com/wild1.com" },
+  { name: "Kustom Tech" },
+  { name: "West Coast Choppers", logo: "https://logo.clearbit.com/westcoastchoppers.com" },
+  { name: "Thundercycle Design" },
+  { name: "Paul Yaffe Bagger Nation", logo: "https://logo.clearbit.com/paulyaffebaggernation.com" },
+  { name: "Red Neck Engineering" },
 ];
 
 export const STATS = [
