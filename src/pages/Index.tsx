@@ -12,9 +12,10 @@ const PHOTO_5 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1
 
 const NAV_LINKS = [
   { id: "home", label: "Главная" },
-  { id: "portfolio", label: "Портфолио" },
-  { id: "services", label: "Услуги" },
-  { id: "blog", label: "Блог" },
+  { id: "portfolio", label: "Мотоциклы" },
+  { id: "garage", label: "Гараж" },
+  { id: "parts", label: "Запчасти" },
+  { id: "family", label: "Семья" },
 ];
 
 const CATEGORIES = ["Все работы", "Чопперы", "Бобберы", "Реставрация", "Тюнинг", "Кастом"];
@@ -33,26 +34,19 @@ const PORTFOLIO_ITEMS = [
   { id: 11, title: "Dark Phantom", category: "Бобберы", year: "2024", img: PHOTO_5, desc: "Классический боббер с полным хромом. Бак с аэрографом, спицованные колёса." },
 ];
 
-const SERVICES = [
-  { icon: "Wrench", title: "Кастом с нуля", desc: "Проектируем и собираем уникальный мотоцикл под ваш характер. От эскиза до первого выезда.", price: "от 350 000 ₽" },
-  { icon: "RefreshCw", title: "Реставрация", desc: "Возвращаем к жизни классические мотоциклы. Оригинальные или улучшенные детали — ваш выбор.", price: "от 120 000 ₽" },
-  { icon: "Settings", title: "Тюнинг и доработка", desc: "Форсировка двигателя, новая подвеска, тормоза. Делаем мотоцикл быстрее и надёжнее.", price: "от 45 000 ₽" },
-  { icon: "Palette", title: "Кузовные работы", desc: "Покраска, хромирование, аэрография. Любой дизайн — от классики до авангарда.", price: "от 25 000 ₽" },
-  { icon: "Zap", title: "Электрика и диагностика", desc: "Полная замена проводки, установка современной электроники, диагностика любой сложности.", price: "от 15 000 ₽" },
-  { icon: "Shield", title: "Техническое обслуживание", desc: "Сезонное ТО, замена расходников, регулировки. Держим ваш байк в идеальном состоянии.", price: "от 8 000 ₽" },
-];
-
-const BLOG_POSTS = [
-  { id: 1, date: "5 марта 2026", tag: "Кастом", title: "Как выбрать раму для чоппера: полный гайд", excerpt: "Разбираем все типы рам — хардтейл, софтейл, сдвоенная люлька. Что подойдёт именно вам и какие компромиссы придётся сделать.", img: GALLERY_IMG_2 },
-  { id: 2, date: "18 февраля 2026", tag: "Реставрация", title: "Panhead vs Knucklehead: в чём разница и что лучше для реставрации", excerpt: "История двух легендарных двигателей Harley-Davidson. Сравниваем характеристики, доступность запчастей и сложность ремонта.", img: GALLERY_IMG_1 },
-  { id: 3, date: "2 февраля 2026", tag: "Тюнинг", title: "5 модов, которые реально меняют характер мотоцикла", excerpt: "Не все тюнинги одинаково полезны. Делимся списком доработок с максимальным эффектом на управляемость и мощность.", img: HERO_IMG },
+const PARTS_BRANDS = [
+  "S&S", "Baker", "DNA", "Custom Chrome", "Motorcycle Storehouse",
+  "Parts Europe", "W&W", "Jims", "Performance Machine", "BDL",
+  "Vance and Hines", "Arlen Ness", "Carlini", "Wild1", "Kustom Tech",
+  "West Coast Choppers", "Thundercycle Design", "Paul Yaffe Bagger Nation",
+  "Red Neck Engineering",
 ];
 
 const STATS = [
-  { value: "12+", label: "лет в деле" },
+  { value: "30+", label: "лет опыта" },
   { value: "340+", label: "проектов" },
-  { value: "8", label: "мастеров в команде" },
-  { value: "100%", label: "гарантия качества" },
+  { value: "100%", label: "сертифицировано H-D" },
+  { value: "∞", label: "страсть к делу" },
 ];
 
 function useInView(threshold = 0.15) {
@@ -83,6 +77,15 @@ function AnimatedSection({ children, className = "" }: { children: React.ReactNo
   );
 }
 
+function SectionLabel({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="flex items-center gap-3 mb-3">
+      <div className="h-px w-12 bg-fire" />
+      <span className="font-body text-xs text-fire uppercase tracking-widest">{children}</span>
+    </div>
+  );
+}
+
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [activeCategory, setActiveCategory] = useState("Все работы");
@@ -104,18 +107,18 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
 
       {/* NAV */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 cursor-pointer" onClick={() => scrollTo("home")}>
-            <div className="w-8 h-8 bg-fire rounded-sm flex items-center justify-center glow-fire">
-              <Icon name="Wrench" size={16} className="text-background rotate-45" />
+            <div className="w-8 h-8 bg-fire rounded-sm flex items-center justify-center" style={{ boxShadow: "0 0 20px hsl(0 90% 45% / 0.5)" }}>
+              <Icon name="Wrench" size={16} className="text-white rotate-45" />
             </div>
             <span className="font-display text-xl tracking-widest uppercase text-foreground">
               Chopper<span className="text-fire">Doctors</span>
             </span>
           </div>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-7">
             {NAV_LINKS.map(link => (
               <button
                 key={link.id}
@@ -128,8 +131,8 @@ const Index = () => {
               </button>
             ))}
             <button
-              onClick={() => scrollTo("services")}
-              className="font-display text-sm tracking-widest uppercase px-5 py-2 bg-fire text-background hover:bg-fire/80 transition-all rounded-sm"
+              onClick={() => scrollTo("contact")}
+              className="font-display text-sm tracking-widest uppercase px-5 py-2 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
             >
               Связаться
             </button>
@@ -157,12 +160,11 @@ const Index = () => {
 
       {/* HERO */}
       <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-16">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${HERO_IMG})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-background/20" />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${PHOTO_2})` }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+        {/* Red glow accent */}
+        <div className="absolute top-1/3 left-1/3 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, hsl(0 90% 45% / 0.08) 0%, transparent 70%)" }} />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
           <div className="max-w-2xl">
@@ -171,48 +173,56 @@ const Index = () => {
               style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
             >
               <div className="w-1.5 h-1.5 rounded-full bg-fire animate-pulse" />
-              <span className="font-body text-xs text-fire tracking-widest uppercase">Мастерская кастомных мотоциклов</span>
+              <span className="font-body text-xs text-fire tracking-widest uppercase">Добро пожаловать в мир Chopper Doctors</span>
             </div>
 
             <h1
-              className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tight mb-6 opacity-0 animate-fade-in"
+              className="font-display text-5xl md:text-7xl lg:text-8xl uppercase leading-none tracking-tight mb-4 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
             >
               <span className="block text-foreground">Chopper</span>
               <span className="block text-fire">Doctors</span>
-              <span className="block text-foreground text-3xl md:text-4xl mt-2 font-body font-light italic">World</span>
+              <span className="block text-foreground/70 text-3xl md:text-4xl mt-1 font-body font-light italic normal-case">World</span>
             </h1>
 
             <p
-              className="font-body text-lg text-muted-foreground leading-relaxed mb-10 max-w-lg opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.6s", animationFillMode: "forwards" }}
+              className="font-display text-xl md:text-2xl text-fire/90 tracking-wide mb-4 opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.55s", animationFillMode: "forwards" }}
             >
-              Строим уникальные мотоциклы, которые живут вечно. Каждый байк — это история. Ваша история.
+              «Создан для езды» — это не просто слоган, это образ жизни
+            </p>
+
+            <p
+              className="font-body text-base text-muted-foreground leading-relaxed mb-10 max-w-xl opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.7s", animationFillMode: "forwards" }}
+            >
+              Благодаря более чем 30-летнему опыту, Chopper Doctors производит чопперы, которые сочетают американский стиль с тщательностью швейцарского качества и традициями старой школы.
             </p>
 
             <div
               className="flex flex-wrap gap-4 opacity-0 animate-fade-in"
-              style={{ animationDelay: "0.8s", animationFillMode: "forwards" }}
+              style={{ animationDelay: "0.9s", animationFillMode: "forwards" }}
             >
               <button
                 onClick={() => scrollTo("portfolio")}
-                className="font-display text-sm tracking-widest uppercase px-8 py-4 bg-fire text-background hover:bg-fire/80 transition-all rounded-sm glow-fire"
+                className="font-display text-sm tracking-widest uppercase px-8 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
+                style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.4)" }}
               >
-                Смотреть работы
+                Смотреть мотоциклы
               </button>
               <button
-                onClick={() => scrollTo("services")}
-                className="font-display text-sm tracking-widest uppercase px-8 py-4 border border-foreground/30 text-foreground hover:border-fire hover:text-fire transition-all rounded-sm"
+                onClick={() => scrollTo("contact")}
+                className="font-display text-sm tracking-widest uppercase px-8 py-4 border border-foreground/25 text-foreground hover:border-fire hover:text-fire transition-all rounded-sm"
               >
-                Наши услуги
+                Связаться с нами
               </button>
             </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-40">
           <span className="font-body text-xs tracking-widest uppercase text-muted-foreground">Scroll</span>
-          <div className="w-px h-12 bg-gradient-to-b from-muted-foreground to-transparent" />
+          <div className="w-px h-12 bg-gradient-to-b from-fire/50 to-transparent" />
         </div>
       </section>
 
@@ -230,42 +240,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* PORTFOLIO */}
+      {/* PORTFOLIO — Кастомные мотоциклы */}
       <section id="portfolio" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-6">
               <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="h-px w-12 bg-fire" />
-                  <span className="font-body text-xs text-fire uppercase tracking-widest">Наши работы</span>
-                </div>
-                <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight">Портфолио</h2>
+                <SectionLabel>Кастомные мотоциклы</SectionLabel>
+                <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-4">Мотоцикл Галерея</h2>
+                <p className="font-body text-muted-foreground max-w-2xl leading-relaxed">
+                  Мы производим мотоциклы, которые существуют не только для восхищения, но и конечно для поездок.
+                  Бескомпромиссный чоппер, созданный для осуществления вашей мечты.
+                </p>
               </div>
-              <div className="flex flex-wrap gap-2">
-                {CATEGORIES.map(cat => (
-                  <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
-                    className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-sm border transition-all ${
-                      activeCategory === cat
-                        ? "bg-fire text-background border-fire"
-                        : "border-border text-muted-foreground hover:border-fire/50 hover:text-foreground"
-                    }`}
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
+            </div>
+            <div className="flex flex-wrap gap-2 mb-10">
+              {CATEGORIES.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveCategory(cat)}
+                  className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-sm border transition-all ${
+                    activeCategory === cat
+                      ? "bg-fire text-white border-fire"
+                      : "border-border text-muted-foreground hover:border-fire/50 hover:text-foreground"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {filteredPortfolio.map((item, i) => (
+            {filteredPortfolio.map((item) => (
               <AnimatedSection key={item.id}>
                 <div
                   className="group relative overflow-hidden rounded-sm cursor-pointer bg-card border border-border hover:border-fire/40 transition-all duration-300"
-                  style={{ animationDelay: `${i * 100}ms` }}
                   onClick={() => setSelectedWork(item)}
                 >
                   <div className="aspect-[4/3] overflow-hidden">
@@ -275,8 +285,8 @@ const Index = () => {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
-                  <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-70 group-hover:opacity-85 transition-opacity" />
+                  <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-1 group-hover:translate-y-0 transition-transform duration-300">
                     <div className="flex items-center gap-2 mb-2">
                       <span className="font-body text-xs text-fire uppercase tracking-widest px-2 py-0.5 border border-fire/40 rounded-sm">
                         {item.category}
@@ -298,149 +308,199 @@ const Index = () => {
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section id="services" className="py-24 px-6 bg-card border-y border-border relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-fire/5 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-fire/3 rounded-full blur-2xl pointer-events-none" />
-
+      {/* GARAGE — Harley Сервис */}
+      <section id="garage" className="py-24 px-6 bg-card border-y border-border relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at top right, hsl(0 90% 45% / 0.06) 0%, transparent 60%)" }} />
         <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <SectionLabel>Гараж Harley</SectionLabel>
+              <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">
+                Кастомизация, Сервис и Ремонт
+              </h2>
+              <p className="font-body text-muted-foreground leading-relaxed mb-5">
+                Ваш байк является вашим отражением, и мы можем помочь вам со всем чем угодно, когда дело доходит до кастомизации. Помогая воплотить мотоцикл вашей мечты, мы предложим вам не только стиль, но и отличные ездовые качества.
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed mb-8">
+                Мы <span className="text-fire font-medium">сертифицированы Harley-Davidson</span>, с многочисленными степенями MMI, и мы можем удовлетворить все ваши запросы по обслуживанию и ремонту.
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                {[
+                  { icon: "Wrench", text: "Кастомизация" },
+                  { icon: "Settings", text: "Сервис и ТО" },
+                  { icon: "Zap", text: "Электрика" },
+                  { icon: "Shield", text: "Гарантия H-D" },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-3 p-3 border border-border rounded-sm bg-background">
+                    <Icon name={item.icon} size={16} className="text-fire flex-shrink-0" />
+                    <span className="font-body text-sm text-foreground">{item.text}</span>
+                  </div>
+                ))}
+              </div>
+              <button
+                onClick={() => scrollTo("contact")}
+                className="mt-8 font-display text-sm tracking-widest uppercase px-8 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
+                style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.35)" }}
+              >
+                Гараж Галерея
+              </button>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="aspect-square overflow-hidden rounded-sm border border-border col-span-2">
+                  <img src={PHOTO_3} alt="Garage" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="aspect-[4/3] overflow-hidden rounded-sm border border-border">
+                  <img src={GALLERY_IMG_2} alt="Garage work" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="aspect-[4/3] overflow-hidden rounded-sm border border-border">
+                  <img src={PHOTO_5} alt="Garage detail" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* PARTS — Запчасти */}
+      <section id="parts" className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <div className="flex items-center gap-3 mb-3">
-              <div className="h-px w-12 bg-fire" />
-              <span className="font-body text-xs text-fire uppercase tracking-widest">Что мы делаем</span>
-            </div>
-            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-4">Услуги</h2>
-            <p className="font-body text-muted-foreground max-w-lg mb-14">
-              Полный цикл работ — от идеи до готового мотоцикла. Берёмся за проекты любой сложности.
+            <SectionLabel>Запчасти и комплектующие</SectionLabel>
+            <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">
+              Новые и специально разработанные детали
+            </h2>
+            <p className="font-body text-muted-foreground leading-relaxed max-w-3xl mb-4">
+              Когда речь идет о запасных частях, мы сочетаем новейшие технологии с лучшими характеристиками и высочайшим качеством, для обеспечения вашей беспроблемной и приятной поездки.
+            </p>
+            <p className="font-body text-muted-foreground leading-relaxed max-w-3xl mb-12">
+              Мы работаем только с лучшими в мире дистрибьюторами и производителями запчастей. Если то, что вы ищете, ещё не произведено — <span className="text-fire">мы можем разработать и изготовить всё, что вам нужно.</span>
             </p>
           </AnimatedSection>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {SERVICES.map((service, i) => (
-              <AnimatedSection key={i}>
-                <div className="group p-6 border border-border hover:border-fire/40 rounded-sm bg-background hover:bg-card transition-all duration-300 cursor-pointer relative overflow-hidden">
-                  <div className="absolute inset-0 bg-gradient-to-br from-fire/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <div className="relative z-10">
-                    <div className="w-12 h-12 rounded-sm border border-border group-hover:border-fire/40 flex items-center justify-center mb-5 transition-colors">
-                      <Icon name={service.icon} size={22} className="text-fire" />
-                    </div>
-                    <h3 className="font-display text-lg uppercase tracking-wide mb-3">{service.title}</h3>
-                    <p className="font-body text-sm text-muted-foreground leading-relaxed mb-5">{service.desc}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="font-display text-fire text-lg">{service.price}</span>
-                      <Icon name="ArrowRight" size={16} className="text-muted-foreground group-hover:text-fire group-hover:translate-x-1 transition-all" />
-                    </div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-
-          <AnimatedSection className="mt-12 text-center">
-            <div className="inline-flex flex-col items-center gap-4 p-8 border border-fire/30 rounded-sm bg-fire/5">
-              <p className="font-body text-muted-foreground">Не нашли нужную услугу? Расскажите о вашем проекте</p>
-              <button className="font-display text-sm tracking-widest uppercase px-8 py-4 bg-fire text-background hover:bg-fire/80 transition-all rounded-sm glow-fire">
-                Обсудить проект
-              </button>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* BLOG */}
-      <section id="blog" className="py-24 px-6">
-        <div className="max-w-7xl mx-auto">
           <AnimatedSection>
-            <div className="flex items-center justify-between mb-12">
-              <div>
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="h-px w-12 bg-fire" />
-                  <span className="font-body text-xs text-fire uppercase tracking-widest">Наш дневник</span>
+            <div className="flex flex-wrap gap-3">
+              {PARTS_BRANDS.map((brand) => (
+                <div
+                  key={brand}
+                  className="px-4 py-2 border border-border rounded-sm font-body text-sm text-muted-foreground hover:border-fire/50 hover:text-foreground transition-all cursor-default"
+                >
+                  {brand}
                 </div>
-                <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight">Блог</h2>
+              ))}
+              <div className="px-4 py-2 border border-fire/30 rounded-sm font-body text-sm text-fire bg-fire/5">
+                … и более
               </div>
-              <button className="hidden md:flex items-center gap-2 font-body text-sm text-muted-foreground hover:text-fire transition-colors">
-                Все статьи <Icon name="ArrowRight" size={16} />
-              </button>
             </div>
           </AnimatedSection>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {BLOG_POSTS.map((post) => (
-              <AnimatedSection key={post.id}>
-                <article className="group cursor-pointer">
-                  <div className="aspect-video overflow-hidden rounded-sm mb-4 border border-border">
-                    <img
-                      src={post.img}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="font-body text-xs text-fire uppercase tracking-widest px-2 py-0.5 border border-fire/30 rounded-sm">
-                      {post.tag}
-                    </span>
-                    <span className="font-body text-xs text-muted-foreground">{post.date}</span>
-                  </div>
-                  <h3 className="font-display text-lg uppercase tracking-wide mb-2 group-hover:text-fire transition-colors leading-snug">
-                    {post.title}
-                  </h3>
-                  <p className="font-body text-sm text-muted-foreground leading-relaxed line-clamp-3">{post.excerpt}</p>
-                  <div className="flex items-center gap-2 mt-4 text-muted-foreground group-hover:text-fire transition-colors">
-                    <span className="font-body text-xs uppercase tracking-widest">Читать далее</span>
-                    <Icon name="ArrowRight" size={14} />
-                  </div>
-                </article>
-              </AnimatedSection>
-            ))}
+      {/* FAMILY */}
+      <section id="family" className="py-24 px-6 bg-card border-y border-border relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at bottom left, hsl(0 90% 45% / 0.05) 0%, transparent 60%)" }} />
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <AnimatedSection>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="aspect-[4/3] overflow-hidden rounded-sm border border-border">
+                  <img src={PHOTO_4} alt="Family rides" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="aspect-[4/3] overflow-hidden rounded-sm border border-border">
+                  <img src={GALLERY_IMG_1} alt="Family rides" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+                <div className="aspect-square overflow-hidden rounded-sm border border-border col-span-2">
+                  <img src={PHOTO_1} alt="Family rides" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+                </div>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection>
+              <SectionLabel>Наша семья</SectionLabel>
+              <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">
+                Фотоальбом & путешествия
+              </h2>
+              <p className="font-body text-muted-foreground leading-relaxed mb-5">
+                Взрослея на калифорнийской культуре байкеров, мы знаем, что люди, с которыми мы ездим, так же важны, как и то, на чём мы ездим.
+              </p>
+              <p className="font-body text-muted-foreground leading-relaxed mb-5">
+                Мы предпочитаем окружать себя единомышленниками, которым нравится путешествовать на мотоцикле, и которые знают, что такое свобода. Именно поэтому большинство наших клиентов становятся семьей.
+              </p>
+              <p className="font-body text-fire italic text-lg leading-relaxed">
+                «Если вам нужно это объяснять — вы такое вряд ли поймёте.»
+              </p>
+              <button
+                onClick={() => scrollTo("contact")}
+                className="mt-8 font-display text-sm tracking-widest uppercase px-8 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm"
+              >
+                Галерея путешествий
+              </button>
+            </AnimatedSection>
           </div>
         </div>
       </section>
 
-      {/* CONTACT STRIP */}
-      <section className="border-t border-border bg-card py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-fire/5 via-transparent to-fire/5 pointer-events-none" />
-        <AnimatedSection className="max-w-4xl mx-auto text-center relative z-10">
+      {/* CONTACT */}
+      <section id="contact" className="py-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse at center, hsl(0 90% 45% / 0.06) 0%, transparent 65%)" }} />
+        <AnimatedSection className="max-w-3xl mx-auto text-center relative z-10">
+          <SectionLabel>Контакты</SectionLabel>
           <h2 className="font-display text-4xl md:text-6xl uppercase tracking-tight mb-4">
-            Есть проект?<br />
-            <span className="text-fire">Поговорим.</span>
+            Воплотим вашу<br />
+            <span className="text-fire">мечту.</span>
           </h2>
-          <p className="font-body text-muted-foreground mb-10 max-w-lg mx-auto">
-            Расскажите о своей мечте — мы воплотим её в металле и хроме.
+          <p className="font-body text-muted-foreground mb-10 max-w-lg mx-auto leading-relaxed">
+            Свяжитесь с нами, когда вам будет удобно, и мы поможем воплотить ваши идеи в жизнь.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="font-display text-sm tracking-widest uppercase px-10 py-4 bg-fire text-background hover:bg-fire/80 transition-all rounded-sm glow-fire">
+          <div className="flex flex-wrap justify-center gap-4 mb-12">
+            <button
+              className="font-display text-sm tracking-widest uppercase px-10 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
+              style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.4)" }}
+            >
               Написать нам
             </button>
             <a
-              href="tel:+70000000000"
+              href="tel:+1234567890"
               className="font-display text-sm tracking-widest uppercase px-10 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm flex items-center gap-2"
             >
               <Icon name="Phone" size={16} />
               Позвонить
             </a>
           </div>
+
+          <div className="flex flex-col items-center gap-2 text-muted-foreground">
+            <div className="flex items-center gap-2 text-sm font-body">
+              <Icon name="MapPin" size={14} className="text-fire" />
+              29670 Марбелья, Малага, Испания
+            </div>
+          </div>
         </AnimatedSection>
       </section>
 
       {/* FOOTER */}
-      <footer className="border-t border-border py-8 px-6">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-2">
-            <div className="w-6 h-6 bg-fire rounded-sm flex items-center justify-center">
-              <Icon name="Wrench" size={12} className="text-background rotate-45" />
+      <footer className="border-t border-border py-8 px-6 bg-card">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-6">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 bg-fire rounded-sm flex items-center justify-center">
+                <Icon name="Wrench" size={12} className="text-white rotate-45" />
+              </div>
+              <span className="font-display text-sm tracking-widest uppercase text-muted-foreground">
+                Chopper<span className="text-fire">Doctors</span> World
+              </span>
             </div>
-            <span className="font-display text-sm tracking-widest uppercase text-muted-foreground">
-              Chopper<span className="text-fire">Doctors</span> World
-            </span>
+            <div className="flex items-center gap-4">
+              {["Instagram", "Youtube", "MessageCircle"].map(icon => (
+                <button key={icon} className="w-8 h-8 border border-border rounded-sm flex items-center justify-center text-muted-foreground hover:border-fire hover:text-fire transition-all">
+                  <Icon name={icon} size={14} />
+                </button>
+              ))}
+            </div>
           </div>
-          <p className="font-body text-xs text-muted-foreground">© 2026 Все права защищены</p>
-          <div className="flex items-center gap-4">
-            {["Instagram", "Youtube", "MessageCircle"].map(icon => (
-              <button key={icon} className="w-8 h-8 border border-border rounded-sm flex items-center justify-center text-muted-foreground hover:border-fire hover:text-fire transition-all">
-                <Icon name={icon} size={14} />
-              </button>
-            ))}
+          <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground font-body">
+            <p>© 2020 Chopper Doctors World — 29670 Марбелья, Малага, Испания</p>
+            <button className="hover:text-fire transition-colors">Условия использования сайта</button>
           </div>
         </div>
       </footer>
@@ -453,7 +513,6 @@ const Index = () => {
         >
           <div
             className="max-w-2xl w-full bg-card border border-border rounded-sm overflow-hidden"
-            style={{ animation: "scale-in 0.3s ease-out" }}
             onClick={e => e.stopPropagation()}
           >
             <div className="aspect-video relative">
@@ -474,7 +533,10 @@ const Index = () => {
               </div>
               <h3 className="font-display text-2xl uppercase tracking-wide mb-3">{selectedWork.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{selectedWork.desc}</p>
-              <button className="font-display text-sm tracking-widest uppercase px-6 py-3 bg-fire text-background hover:bg-fire/80 transition-all rounded-sm">
+              <button
+                onClick={() => { setSelectedWork(null); scrollTo("contact"); }}
+                className="font-display text-sm tracking-widest uppercase px-6 py-3 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
+              >
                 Заказать похожий проект
               </button>
             </div>
