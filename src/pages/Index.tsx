@@ -89,8 +89,8 @@ const Index = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         <div className="absolute top-1/3 left-1/3 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, hsl(0 90% 45% / 0.08) 0%, transparent 70%)" }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-          <div className="max-w-2xl">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-20 flex flex-col items-center text-center">
+          <div className="max-w-2xl w-full flex flex-col items-center">
             <div
               className="inline-flex items-center gap-2 px-3 py-1 border border-fire/40 rounded-sm mb-6 opacity-0 animate-fade-in"
               style={{ animationDelay: "0.2s", animationFillMode: "forwards" }}
@@ -102,8 +102,8 @@ const Index = () => {
             <img
               src="https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg"
               alt="Chopper Doctors World"
-              className="w-56 md:w-72 lg:w-80 object-contain mb-4 opacity-0 animate-fade-in drop-shadow-2xl"
-              style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
+              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in"
+              style={{ animationDelay: "0.4s", animationFillMode: "forwards", mixBlendMode: "screen" }}
             />
 
             <p
@@ -121,7 +121,7 @@ const Index = () => {
             </p>
 
             <div
-              className="flex flex-wrap gap-4 opacity-0 animate-fade-in"
+              className="flex flex-wrap gap-4 justify-center opacity-0 animate-fade-in"
               style={{ animationDelay: "0.9s", animationFillMode: "forwards" }}
             >
               <button
