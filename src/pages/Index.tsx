@@ -220,6 +220,12 @@ const PHOTO_30 = "https://cdn.poehali.dev/files/12de10aa-0eaf-4f35-aa88-2ba67844
 const PHOTO_31 = "https://cdn.poehali.dev/files/380bf8c5-0732-4d98-baa8-2eef8811be79.jpg";
 const PHOTO_32 = "https://cdn.poehali.dev/files/de849e6d-9574-49a9-9206-1f12cb0c9fb8.jpg";
 const PHOTO_33 = "https://cdn.poehali.dev/files/68fdedb7-e8fd-4f2b-b474-def004fadd55.jpg";
+const PHOTO_34 = "https://cdn.poehali.dev/files/1c1cbb43-50ee-4b6f-a2d3-df77bbd091c0.jpg";
+const PHOTO_35 = "https://cdn.poehali.dev/files/b190267e-9352-4d97-9e97-0f56d4a0eb91.jpg";
+const PHOTO_36 = "https://cdn.poehali.dev/files/a6ec5fcc-001d-4493-9566-bbe1ad9e0064.jpg";
+const PHOTO_37 = "https://cdn.poehali.dev/files/afa4a7e0-0744-47ca-9fd1-1a72d2861144.jpg";
+const PHOTO_38 = "https://cdn.poehali.dev/files/b72504ab-31ef-46ea-b8ab-bdf45b5b9644.jpg";
+const PHOTO_39 = "https://cdn.poehali.dev/files/79dbfd2a-875e-4766-865d-e6cf6cced7d8.jpg";
 
 
 
@@ -263,6 +269,12 @@ const PORTFOLIO_ITEMS = [
   { id: 37, title: "Full Flame Orange", category: "Чопперы", year: "2023", img: PHOTO_31, desc: "Полностью огненный оранжевый чоппер. Аэрограф на всех панелях, хром, пустынная трасса." },
   { id: 38, title: "Blue Skull Trike", category: "Тюнинг", year: "2023", img: PHOTO_32, desc: "Кастомный трайк с черепами и бирюзовым аэрографом. Хром везде, три колеса, мощный V-twin." },
   { id: 39, title: "Bordeaux Estate", category: "Чопперы", year: "2022", img: PHOTO_33, desc: "Бордовый чоппер с гравировкой на баке у особняка. Хром, широкие колёса, европейский стиль." },
+  { id: 40, title: "Aventador V-Rod", category: "Тюнинг", year: "2025", img: PHOTO_34, desc: "Жёлто-чёрный кастом V-Rod Aventador. Карбоновые панели, широкая задняя резина, экстремальный тюнинг." },
+  { id: 41, title: "Green Flame Bobber", category: "Бобберы", year: "2024", img: PHOTO_35, desc: "Ярко-зелёный боббер с пламенным аэрографом. Хромированный V-twin, спицованные колёса, уличный стиль." },
+  { id: 42, title: "Black Street Chopper", category: "Чопперы", year: "2024", img: PHOTO_36, desc: "Полностью чёрный стрит-чоппер. Минималистичный дизайн, хромированные выхлопы, городской байк." },
+  { id: 43, title: "Orange Purple Tribal", category: "Кастом", year: "2023", img: PHOTO_37, desc: "Оранжевый кастом с фиолетовым трибал-аэрографом. Хром, широкие колёса, вечерняя атмосфера." },
+  { id: 44, title: "Loco Swiss Chopper", category: "Чопперы", year: "2023", img: PHOTO_38, desc: "Чёрный чоппер Loco на альпийском лугу. Спицованные колёса, серебристый бак, швейцарский пейзаж." },
+  { id: 45, title: "Blue Woodpile", category: "Бобберы", year: "2022", img: PHOTO_39, desc: "Голубой боббер у поленницы дров. Хромированный двигатель, классические крылья, природный фон." },
 ];
 
 const PARTS_BRANDS = [
