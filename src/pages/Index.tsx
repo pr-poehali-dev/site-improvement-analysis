@@ -77,7 +77,14 @@ const Index = () => {
 
       {/* HERO */}
       <section id="home" className="relative min-h-screen flex items-center overflow-hidden pt-16">
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${PHOTO_2})` }} />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+          src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/a7cf0ff5-b1a2-44a7-8533-a78bb7c78806.mp4"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
         <div className="absolute top-1/3 left-1/3 w-96 h-96 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, hsl(0 90% 45% / 0.08) 0%, transparent 70%)" }} />
