@@ -301,8 +301,6 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     "https://cdn.poehali.dev/files/0b3640b6-9ecc-475e-94a4-f41a5fd60080.jpg",
     "https://cdn.poehali.dev/files/4017706c-e1e4-49c9-a5cb-01b5efba71a7.jpg",
     "https://cdn.poehali.dev/files/9a811357-e9fd-4e9a-9dd3-38035e1982a4.jpg",
-  ] },
-  { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена.", photos: [
     "https://cdn.poehali.dev/files/1f6b5154-703a-48cd-92f8-47d3d35e19ef.jpg",
     "https://cdn.poehali.dev/files/45ac8420-0e0f-4cd7-96c9-aa1c7deb9e3f.jpg",
     "https://cdn.poehali.dev/files/61c1039d-5f95-4829-afc1-f40738129a4e.jpg",
@@ -310,6 +308,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     "https://cdn.poehali.dev/files/557bd724-c87a-4179-99cb-0224020590fc.jpg",
     "https://cdn.poehali.dev/files/b7fdf9e3-9e25-4cbb-b3fc-7d1b9a6efc41.jpg",
   ] },
+  { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена." },
   { id: 8, title: "Blue Thunder", category: "Кастом", year: "2025", img: PHOTO_2, desc: "Синий кастом Chopper Doctors с пламенным аэрографом. Флагманский проект мастерской." },
   { id: 9, title: "Red Baron", category: "Чопперы", year: "2024", img: PHOTO_3, desc: "Массивный красно-чёрный чоппер с открытым двигателем. Мастер на борту — байк на зависть." },
   { id: 10, title: "Three Kings", category: "Кастом", year: "2024", img: PHOTO_4, desc: "Три разных чоппера на трассе. Демонстрация диапазона стилей мастерской." },
