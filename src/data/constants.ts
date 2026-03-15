@@ -239,7 +239,7 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
 
 const PHOTO_1 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/fe6da3f5-69fe-4b77-b401-319c0e2e02d4.jpg";
 export const PHOTO_2 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/62691b9e-c340-4e3f-8f8a-31efdf7a3559.jpg";
-export const PHOTO_3 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/4f2acc4e-1dc0-41a4-bf72-2ee08fb895c4.jpg";
+export const PHOTO_3 = "https://cdn.poehali.dev/files/e49939f9-516e-4b3d-8a3f-1719df4befe0.jpg";
 const PHOTO_4 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/9c257ff6-fc47-4064-82f1-95c9aeb31499.jpg";
 export const PHOTO_5 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/7832bfc0-a7ed-40ac-9d47-fc1024f40000.jpg";
 const PHOTO_6 = "https://cdn.poehali.dev/files/308fbeb2-6bce-4d94-8f05-56ac1c83e90e.jpg";
