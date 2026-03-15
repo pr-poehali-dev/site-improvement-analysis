@@ -45,6 +45,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
 
   const [activeCategory, setActiveCategory] = useState(TRANSLATIONS[lang].cat_all);
   const [selectedWork, setSelectedWork] = useState<typeof PORTFOLIO_ITEMS[0] | null>(null);
+  const [photoIndex, setPhotoIndex] = useState(0);
 
   const prevLangRef = { current: lang };
   if (prevLangRef.current !== lang) {
@@ -63,6 +64,11 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
         };
         return item.category === (catMap[activeCategory] || activeCategory);
       });
+
+  const openWork = (item: typeof PORTFOLIO_ITEMS[0]) => {
+    setSelectedWork(item);
+    setPhotoIndex(0);
+  };
 
   const scrollToContact = () => {
     const el = document.getElementById("contact");
@@ -89,7 +95,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
               <AnimatedSectionLocal key={item.id}>
                 <div
                   className="group relative overflow-hidden rounded-sm cursor-pointer bg-card border border-border hover:border-fire/40 transition-all duration-300"
-                  onClick={() => setSelectedWork(item)}
+                  onClick={() => openWork(item)}
                 >
                   <div className="aspect-[4/3] overflow-hidden relative">
                     <img
@@ -121,53 +127,104 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
       </section>
 
       {/* MODAL */}
-      {selectedWork && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/90 backdrop-blur-sm"
-          onClick={() => setSelectedWork(null)}
-        >
+      {selectedWork && (() => {
+        const allPhotos = selectedWork.photos?.length
+          ? selectedWork.photos
+          : [selectedWork.img];
+        const currentPhoto = allPhotos[photoIndex];
+        const hasPrev = photoIndex > 0;
+        const hasNext = photoIndex < allPhotos.length - 1;
+        return (
           <div
-            className="max-w-2xl w-full bg-card border border-border rounded-sm overflow-hidden"
-            onClick={e => e.stopPropagation()}
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/90 backdrop-blur-sm"
+            onClick={() => setSelectedWork(null)}
           >
-            <div className="aspect-video relative bg-black">
-              {selectedWork.video ? (
-                <video
-                  src={selectedWork.video}
-                  poster={selectedWork.img}
-                  controls
-                  autoPlay
-                  className="w-full h-full object-contain"
-                />
-              ) : (
-                <img src={selectedWork.img} alt={selectedWork.title} className="w-full h-full object-cover" />
-              )}
-              <button
-                onClick={() => setSelectedWork(null)}
-                className="absolute top-4 right-4 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-foreground hover:text-fire transition-colors z-10"
-              >
-                <Icon name="X" size={16} />
-              </button>
-            </div>
-            <div className="p-6">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="font-body text-xs text-fire uppercase tracking-widest px-2 py-0.5 border border-fire/40 rounded-sm">
-                  {selectedWork.category}
-                </span>
-                <span className="font-body text-xs text-muted-foreground">{selectedWork.year}</span>
+            <div
+              className="max-w-3xl w-full bg-card border border-border rounded-sm overflow-hidden"
+              onClick={e => e.stopPropagation()}
+            >
+              <div className="aspect-video relative bg-black">
+                {selectedWork.video && photoIndex === 0 && !selectedWork.photos ? (
+                  <video
+                    src={selectedWork.video}
+                    poster={selectedWork.img}
+                    controls
+                    autoPlay
+                    className="w-full h-full object-contain"
+                  />
+                ) : (
+                  <img src={currentPhoto} alt={selectedWork.title} className="w-full h-full object-cover" />
+                )}
+                <button
+                  onClick={() => setSelectedWork(null)}
+                  className="absolute top-4 right-4 w-8 h-8 bg-background/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-foreground hover:text-fire transition-colors z-10"
+                >
+                  <Icon name="X" size={16} />
+                </button>
+                {hasPrev && (
+                  <button
+                    onClick={e => { e.stopPropagation(); setPhotoIndex(i => i - 1); }}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-9 h-9 bg-background/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-foreground hover:text-fire transition-colors z-10"
+                  >
+                    <Icon name="ChevronLeft" size={20} />
+                  </button>
+                )}
+                {hasNext && (
+                  <button
+                    onClick={e => { e.stopPropagation(); setPhotoIndex(i => i + 1); }}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-9 h-9 bg-background/80 backdrop-blur-sm rounded-sm flex items-center justify-center text-foreground hover:text-fire transition-colors z-10"
+                  >
+                    <Icon name="ChevronRight" size={20} />
+                  </button>
+                )}
+                {allPhotos.length > 1 && (
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                    {allPhotos.map((_, i) => (
+                      <button
+                        key={i}
+                        onClick={e => { e.stopPropagation(); setPhotoIndex(i); }}
+                        className={`w-1.5 h-1.5 rounded-full transition-all ${i === photoIndex ? "bg-fire w-4" : "bg-white/50"}`}
+                      />
+                    ))}
+                  </div>
+                )}
               </div>
-              <h3 className="font-display text-2xl uppercase tracking-wide mb-3">{selectedWork.title}</h3>
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{selectedWork.desc}</p>
-              <button
-                onClick={() => { setSelectedWork(null); scrollToContact(); }}
-                className="font-display text-sm tracking-widest uppercase px-6 py-3 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
-              >
-                {t("modal_order")}
-              </button>
+              {allPhotos.length > 1 && (
+                <div className="flex gap-2 px-4 pt-3 overflow-x-auto pb-1">
+                  {allPhotos.map((photo, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setPhotoIndex(i)}
+                      className={`flex-shrink-0 w-14 h-10 rounded-sm overflow-hidden border-2 transition-all ${i === photoIndex ? "border-fire" : "border-transparent opacity-60 hover:opacity-100"}`}
+                    >
+                      <img src={photo} alt="" className="w-full h-full object-cover" />
+                    </button>
+                  ))}
+                </div>
+              )}
+              <div className="p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="font-body text-xs text-fire uppercase tracking-widest px-2 py-0.5 border border-fire/40 rounded-sm">
+                    {selectedWork.category}
+                  </span>
+                  <span className="font-body text-xs text-muted-foreground">{selectedWork.year}</span>
+                  {allPhotos.length > 1 && (
+                    <span className="font-body text-xs text-muted-foreground ml-auto">{photoIndex + 1} / {allPhotos.length}</span>
+                  )}
+                </div>
+                <h3 className="font-display text-2xl uppercase tracking-wide mb-3">{selectedWork.title}</h3>
+                <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{selectedWork.desc}</p>
+                <button
+                  onClick={() => { setSelectedWork(null); scrollToContact(); }}
+                  className="font-display text-sm tracking-widest uppercase px-6 py-3 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
+                >
+                  {t("modal_order")}
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </>
   );
 }

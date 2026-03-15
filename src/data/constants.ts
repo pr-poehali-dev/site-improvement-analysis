@@ -286,10 +286,22 @@ export type PortfolioItem = {
   img: string;
   desc: string;
   video?: string;
+  photos?: string[];
 };
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
-  { id: 46, title: "Red Tribal Chopper", category: "Чопперы", year: "2025", img: PHOTO_40, desc: "Красный чоппер с серебряным трибал-аэрографом. Хромированный V-twin, длинная вилка, мастер на борту." },
+  { id: 46, title: "Red Tribal Chopper", category: "Чопперы", year: "2025", img: PHOTO_40, desc: "Красный чоппер с серебряным трибал-аэрографом. Хромированный V-twin, длинная вилка, мастер на борту.", photos: [
+    "https://cdn.poehali.dev/files/b088de1d-2073-4075-ae3a-fc64cc572594.jpg",
+    "https://cdn.poehali.dev/files/4c33d4ee-344f-44d5-832b-d9b726eaf852.jpg",
+    "https://cdn.poehali.dev/files/77ef869b-50dc-4b9a-a42e-cbfc32d26e61.jpg",
+    "https://cdn.poehali.dev/files/59ebe4b2-3eed-4298-bfa1-3343dded6aaf.jpg",
+    "https://cdn.poehali.dev/files/344ab6db-bd47-493e-b414-cbd337ba8ba3.jpg",
+    "https://cdn.poehali.dev/files/85a90d27-07ea-416b-8fc9-b12a206b42ee.jpg",
+    "https://cdn.poehali.dev/files/837a8b0b-a65a-4c57-9df7-39db477246b0.jpg",
+    "https://cdn.poehali.dev/files/0b3640b6-9ecc-475e-94a4-f41a5fd60080.jpg",
+    "https://cdn.poehali.dev/files/4017706c-e1e4-49c9-a5cb-01b5efba71a7.jpg",
+    "https://cdn.poehali.dev/files/9a811357-e9fd-4e9a-9dd3-38035e1982a4.jpg",
+  ] },
   { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена." },
   { id: 8, title: "Blue Thunder", category: "Кастом", year: "2025", img: PHOTO_2, desc: "Синий кастом Chopper Doctors с пламенным аэрографом. Флагманский проект мастерской." },
   { id: 9, title: "Red Baron", category: "Чопперы", year: "2024", img: PHOTO_3, desc: "Массивный красно-чёрный чоппер с открытым двигателем. Мастер на борту — байк на зависть." },
