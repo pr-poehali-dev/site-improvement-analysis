@@ -276,6 +276,7 @@ const PHOTO_36 = "https://cdn.poehali.dev/files/a6ec5fcc-001d-4493-9566-bbe1ad9e
 const PHOTO_37 = "https://cdn.poehali.dev/files/afa4a7e0-0744-47ca-9fd1-1a72d2861144.jpg";
 const PHOTO_38 = "https://cdn.poehali.dev/files/b72504ab-31ef-46ea-b8ab-bdf45b5b9644.jpg";
 const PHOTO_39 = "https://cdn.poehali.dev/files/79dbfd2a-875e-4766-865d-e6cf6cced7d8.jpg";
+const PHOTO_40 = "https://cdn.poehali.dev/files/f3478fb5-47ae-44e7-adb1-caa063b52bc5.jpg";
 
 export type PortfolioItem = {
   id: number;
@@ -327,6 +328,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 43, title: "Orange Purple Tribal", category: "Кастом", year: "2023", img: PHOTO_37, desc: "Оранжевый кастом с фиолетовым трибал-аэрографом. Хром, широкие колёса, вечерняя атмосфера." },
   { id: 44, title: "Loco Swiss Chopper", category: "Чопперы", year: "2023", img: PHOTO_38, desc: "Чёрный чоппер Loco на альпийском лугу. Спицованные колёса, серебристый бак, швейцарский пейзаж." },
   { id: 45, title: "Blue Woodpile", category: "Бобберы", year: "2022", img: PHOTO_39, desc: "Голубой боббер у поленницы дров. Хромированный двигатель, классические крылья, природный фон." },
+  { id: 46, title: "Red Tribal Chopper", category: "Чопперы", year: "2025", img: PHOTO_40, desc: "Красный чоппер с серебряным трибал-аэрографом. Хромированный V-twin, длинная вилка, мастер на борту." },
 ];
 
 export const PARTS_BRANDS: { name: string; logo?: string }[] = [
