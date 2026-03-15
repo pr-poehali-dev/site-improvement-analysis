@@ -289,6 +289,7 @@ export type PortfolioItem = {
 };
 
 export const PORTFOLIO_ITEMS: PortfolioItem[] = [
+  { id: 46, title: "Red Tribal Chopper", category: "Чопперы", year: "2025", img: PHOTO_40, desc: "Красный чоппер с серебряным трибал-аэрографом. Хромированный V-twin, длинная вилка, мастер на борту." },
   { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена." },
   { id: 8, title: "Blue Thunder", category: "Кастом", year: "2025", img: PHOTO_2, desc: "Синий кастом Chopper Doctors с пламенным аэрографом. Флагманский проект мастерской." },
   { id: 9, title: "Red Baron", category: "Чопперы", year: "2024", img: PHOTO_3, desc: "Массивный красно-чёрный чоппер с открытым двигателем. Мастер на борту — байк на зависть." },
@@ -328,7 +329,6 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 43, title: "Orange Purple Tribal", category: "Кастом", year: "2023", img: PHOTO_37, desc: "Оранжевый кастом с фиолетовым трибал-аэрографом. Хром, широкие колёса, вечерняя атмосфера." },
   { id: 44, title: "Loco Swiss Chopper", category: "Чопперы", year: "2023", img: PHOTO_38, desc: "Чёрный чоппер Loco на альпийском лугу. Спицованные колёса, серебристый бак, швейцарский пейзаж." },
   { id: 45, title: "Blue Woodpile", category: "Бобберы", year: "2022", img: PHOTO_39, desc: "Голубой боббер у поленницы дров. Хромированный двигатель, классические крылья, природный фон." },
-  { id: 46, title: "Red Tribal Chopper", category: "Чопперы", year: "2025", img: PHOTO_40, desc: "Красный чоппер с серебряным трибал-аэрографом. Хромированный V-twin, длинная вилка, мастер на борту." },
 ];
 
 export const PARTS_BRANDS: { name: string; logo?: string }[] = [
