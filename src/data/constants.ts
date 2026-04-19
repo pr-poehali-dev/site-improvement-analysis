@@ -359,7 +359,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
 
 export const PARTS_BRANDS: { name: string; logo?: string }[] = [
   { name: "S&S", logo: "https://www.google.com/s2/favicons?domain=sscycle.com&sz=64" },
-  { name: "Baker", logo: "https://www.google.com/s2/favicons?domain=bakerdrivetrain.com&sz=64" },
+  { name: "Baker", logo: "https://cdn.poehali.dev/files/49f126b5-29da-492e-b383-29a1b8384e92.jpg" },
   { name: "DNA", logo: "https://www.google.com/s2/favicons?domain=dnachopper.com&sz=64" },
   { name: "Custom Chrome", logo: "https://www.google.com/s2/favicons?domain=customchrome.com&sz=64" },
   { name: "Motorcycle Storehouse", logo: "https://www.google.com/s2/favicons?domain=motorcyclestorehouse.com&sz=64" },
