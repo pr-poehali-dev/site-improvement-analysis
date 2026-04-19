@@ -130,7 +130,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
       {selectedWork && (() => {
         const allPhotos = [
           selectedWork.img,
-          ...(selectedWork.photos ?? []),
+          ...(selectedWork.photos ?? []).filter(p => p !== selectedWork.img),
         ];
         const currentPhoto = allPhotos[photoIndex];
         const hasPrev = photoIndex > 0;
