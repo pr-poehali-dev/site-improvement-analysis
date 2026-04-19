@@ -128,9 +128,10 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
 
       {/* MODAL */}
       {selectedWork && (() => {
-        const allPhotos = selectedWork.photos?.length
-          ? selectedWork.photos
-          : [selectedWork.img];
+        const allPhotos = [
+          selectedWork.img,
+          ...(selectedWork.photos ?? []),
+        ];
         const currentPhoto = allPhotos[photoIndex];
         const hasPrev = photoIndex > 0;
         const hasNext = photoIndex < allPhotos.length - 1;
