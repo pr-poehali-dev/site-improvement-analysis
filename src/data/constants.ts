@@ -309,17 +309,17 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     "https://cdn.poehali.dev/files/b7fdf9e3-9e25-4cbb-b3fc-7d1b9a6efc41.jpg",
   ] },
   { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена.", photos: [
-    "https://cdn.poehali.dev/files/24d21202-5ce6-4b6e-9a48-e09566d56550.jpg",
+    "https://cdn.poehali.dev/files/6c1c4e45-c5fe-4ce3-90ee-d4b4f9cd13ca.jpg",
   ] },
   { id: 8, title: "Blue Thunder", category: "Кастом", year: "2025", img: PHOTO_2, desc: "Синий кастом Chopper Doctors с пламенным аэрографом. Флагманский проект мастерской.", photos: [
-    "https://cdn.poehali.dev/files/7902dd07-fbf3-46ee-91fa-de7034ad2e79.jpg",
+    "https://cdn.poehali.dev/files/9ef24c4b-01f4-4119-946c-7ff346a03690.jpg",
   ] },
   { id: 9, title: "Red Baron", category: "Чопперы", year: "2024", img: PHOTO_3, desc: "Массивный красно-чёрный чоппер с открытым двигателем. Мастер на борту — байк на зависть." },
   { id: 10, title: "Three Kings", category: "Кастом", year: "2024", img: PHOTO_4, desc: "Три разных чоппера на трассе. Демонстрация диапазона стилей мастерской.", photos: [
-    "https://cdn.poehali.dev/files/0c9f29df-b91d-4e7e-94c1-04edd344629f.jpg",
+    "https://cdn.poehali.dev/files/6bdc5709-a538-42ba-9e2b-56e37b999eb3.jpg",
   ] },
   { id: 11, title: "Dark Phantom", category: "Бобберы", year: "2024", img: PHOTO_5, desc: "Классический боббер с полным хромом. Бак с аэрографом, спицованные колёса.", photos: [
-    "https://cdn.poehali.dev/files/a649db05-8fd6-483c-8f13-e218bd54cbf4.jpg",
+    "https://cdn.poehali.dev/files/36b122f7-f0eb-4f69-8ad7-938b7ba5ce1b.jpg",
   ] },
   { id: 12, title: "Crimson Show Chopper", category: "Чопперы", year: "2025", img: PHOTO_6, desc: "Выставочный чоппер бордово-хромового окраса. Пламенный аэрограф на баке, широкая резина." },
   { id: 13, title: "S&S X-Wedge Pro", category: "Кастом", year: "2025", img: PHOTO_7, desc: "Агрессивный оранжевый кастом на двигателе S&S X-Wedge. Низкая посадка, хром везде." },
