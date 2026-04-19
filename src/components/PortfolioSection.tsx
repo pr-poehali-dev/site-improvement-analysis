@@ -144,17 +144,18 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
               className="max-w-3xl w-full bg-card border border-border rounded-sm overflow-hidden"
               onClick={e => e.stopPropagation()}
             >
-              <div className="aspect-video relative bg-black">
+              <div className="relative bg-black flex items-center justify-center" style={{maxHeight: "75vh"}}>
                 {selectedWork.video && photoIndex === 0 && !selectedWork.photos ? (
                   <video
                     src={selectedWork.video}
                     poster={selectedWork.img}
                     controls
                     autoPlay
-                    className="w-full h-full object-contain"
+                    className="w-full object-contain"
+                    style={{maxHeight: "75vh"}}
                   />
                 ) : (
-                  <img src={currentPhoto} alt={selectedWork.title} className="w-full h-full object-cover" />
+                  <img src={currentPhoto} alt={selectedWork.title} className="w-full object-contain" style={{maxHeight: "75vh"}} />
                 )}
                 <button
                   onClick={() => setSelectedWork(null)}
