@@ -190,12 +190,12 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                 )}
               </div>
               {allPhotos.length > 1 && (
-                <div className="flex gap-2 px-4 pt-3 overflow-x-auto pb-1">
+                <div className="grid grid-cols-[repeat(auto-fill,minmax(56px,1fr))] gap-2 px-4 pt-3 pb-1">
                   {allPhotos.map((photo, i) => (
                     <button
                       key={i}
                       onClick={() => setPhotoIndex(i)}
-                      className={`flex-shrink-0 w-14 h-10 rounded-sm overflow-hidden border-2 transition-all ${i === photoIndex ? "border-fire" : "border-transparent opacity-60 hover:opacity-100"}`}
+                      className={`w-full h-10 rounded-sm overflow-hidden border-2 transition-all ${i === photoIndex ? "border-fire" : "border-transparent opacity-60 hover:opacity-100"}`}
                     >
                       <img src={photo} alt="" className="w-full h-full object-cover" />
                     </button>
