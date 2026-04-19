@@ -308,11 +308,19 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     "https://cdn.poehali.dev/files/557bd724-c87a-4179-99cb-0224020590fc.jpg",
     "https://cdn.poehali.dev/files/b7fdf9e3-9e25-4cbb-b3fc-7d1b9a6efc41.jpg",
   ] },
-  { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена." },
-  { id: 8, title: "Blue Thunder", category: "Кастом", year: "2025", img: PHOTO_2, desc: "Синий кастом Chopper Doctors с пламенным аэрографом. Флагманский проект мастерской." },
+  { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена.", photos: [
+    "https://cdn.poehali.dev/files/24d21202-5ce6-4b6e-9a48-e09566d56550.jpg",
+  ] },
+  { id: 8, title: "Blue Thunder", category: "Кастом", year: "2025", img: PHOTO_2, desc: "Синий кастом Chopper Doctors с пламенным аэрографом. Флагманский проект мастерской.", photos: [
+    "https://cdn.poehali.dev/files/7902dd07-fbf3-46ee-91fa-de7034ad2e79.jpg",
+  ] },
   { id: 9, title: "Red Baron", category: "Чопперы", year: "2024", img: PHOTO_3, desc: "Массивный красно-чёрный чоппер с открытым двигателем. Мастер на борту — байк на зависть." },
-  { id: 10, title: "Three Kings", category: "Кастом", year: "2024", img: PHOTO_4, desc: "Три разных чоппера на трассе. Демонстрация диапазона стилей мастерской." },
-  { id: 11, title: "Dark Phantom", category: "Бобберы", year: "2024", img: PHOTO_5, desc: "Классический боббер с полным хромом. Бак с аэрографом, спицованные колёса." },
+  { id: 10, title: "Three Kings", category: "Кастом", year: "2024", img: PHOTO_4, desc: "Три разных чоппера на трассе. Демонстрация диапазона стилей мастерской.", photos: [
+    "https://cdn.poehali.dev/files/0c9f29df-b91d-4e7e-94c1-04edd344629f.jpg",
+  ] },
+  { id: 11, title: "Dark Phantom", category: "Бобберы", year: "2024", img: PHOTO_5, desc: "Классический боббер с полным хромом. Бак с аэрографом, спицованные колёса.", photos: [
+    "https://cdn.poehali.dev/files/a649db05-8fd6-483c-8f13-e218bd54cbf4.jpg",
+  ] },
   { id: 12, title: "Crimson Show Chopper", category: "Чопперы", year: "2025", img: PHOTO_6, desc: "Выставочный чоппер бордово-хромового окраса. Пламенный аэрограф на баке, широкая резина." },
   { id: 13, title: "S&S X-Wedge Pro", category: "Кастом", year: "2025", img: PHOTO_7, desc: "Агрессивный оранжевый кастом на двигателе S&S X-Wedge. Низкая посадка, хром везде." },
   { id: 14, title: "Black Dragon", category: "Чопперы", year: "2024", img: PHOTO_8, desc: "Чёрный чоппер с красным символом на баке. Хромированный V-twin, минималистичный дизайн." },
