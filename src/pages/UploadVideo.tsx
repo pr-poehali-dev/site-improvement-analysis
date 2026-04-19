@@ -78,7 +78,7 @@ export default function UploadVideo() {
       <div className="w-full max-w-xl">
         <div className="flex items-center gap-3 mb-8">
           <img
-            src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/logos/logo_transparent.png"
+            src="https://cdn.poehali.dev/files/3048294b-7a17-4be6-ae69-b143f00fbcd4.jpg"
             alt="Chopper Doctors World"
             className="w-10 h-10 object-contain"
           />
