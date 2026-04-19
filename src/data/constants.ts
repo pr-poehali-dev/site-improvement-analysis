@@ -375,7 +375,7 @@ export const PARTS_BRANDS: { name: string; logo?: string }[] = [
   { name: "Kustom Tech", logo: "https://www.google.com/s2/favicons?domain=kustomtech.com&sz=64" },
   { name: "West Coast Choppers", logo: "https://www.google.com/s2/favicons?domain=westcoastchoppers.com&sz=64" },
   { name: "Thundercycle Design", logo: "https://www.google.com/s2/favicons?domain=thundercycle.com&sz=64" },
-  { name: "Paul Yaffe Bagger Nation", logo: "https://www.google.com/s2/favicons?domain=paulyaffebaggernation.com&sz=64" },
+  { name: "Paul Yaffe Bagger Nation", logo: "https://cdn.poehali.dev/files/70d9d1b6-5fb6-4a82-bc1e-efda3cb584ab.jpg" },
   { name: "Red Neck Engineering", logo: "https://www.google.com/s2/favicons?domain=redneckengineering.com&sz=64" },
 ];
 
