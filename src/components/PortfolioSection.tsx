@@ -203,25 +203,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                   ))}
                 </div>
               )}
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="font-body text-xs text-fire uppercase tracking-widest px-2 py-0.5 border border-fire/40 rounded-sm">
-                    {selectedWork.category}
-                  </span>
-                  <span className="font-body text-xs text-muted-foreground">{selectedWork.year}</span>
-                  {allPhotos.length > 1 && (
-                    <span className="font-body text-xs text-muted-foreground ml-auto">{photoIndex + 1} / {allPhotos.length}</span>
-                  )}
-                </div>
-                <h3 className="font-display text-2xl uppercase tracking-wide mb-3">{selectedWork.title}</h3>
-                <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{selectedWork.desc}</p>
-                <button
-                  onClick={() => { setSelectedWork(null); scrollToContact(); }}
-                  className="font-display text-sm tracking-widest uppercase px-6 py-3 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
-                >
-                  {t("modal_order")}
-                </button>
-              </div>
+
             </div>
           </div>
         );
