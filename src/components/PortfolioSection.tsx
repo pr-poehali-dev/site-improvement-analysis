@@ -203,7 +203,14 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
                   ))}
                 </div>
               )}
-
+              <div className="p-4">
+                <button
+                  onClick={() => { setSelectedWork(null); scrollToContact(); }}
+                  className="w-full font-display text-sm tracking-widest uppercase px-6 py-3 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
+                >
+                  {t("modal_order")}
+                </button>
+              </div>
             </div>
           </div>
         );
