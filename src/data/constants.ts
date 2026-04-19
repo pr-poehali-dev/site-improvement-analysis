@@ -237,10 +237,10 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
 };
 
 
-const PHOTO_1 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/fe6da3f5-69fe-4b77-b401-319c0e2e02d4.jpg";
-export const PHOTO_2 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/62691b9e-c340-4e3f-8f8a-31efdf7a3559.jpg";
+const PHOTO_1 = "https://cdn.poehali.dev/files/6c1c4e45-c5fe-4ce3-90ee-d4b4f9cd13ca.jpg";
+export const PHOTO_2 = "https://cdn.poehali.dev/files/9ef24c4b-01f4-4119-946c-7ff346a03690.jpg";
 export const PHOTO_3 = "https://cdn.poehali.dev/files/e49939f9-516e-4b3d-8a3f-1719df4befe0.jpg";
-const PHOTO_4 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/9c257ff6-fc47-4064-82f1-95c9aeb31499.jpg";
+const PHOTO_4 = "https://cdn.poehali.dev/files/6bdc5709-a538-42ba-9e2b-56e37b999eb3.jpg";
 export const PHOTO_5 = "https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/7832bfc0-a7ed-40ac-9d47-fc1024f40000.jpg";
 const PHOTO_6 = "https://cdn.poehali.dev/files/308fbeb2-6bce-4d94-8f05-56ac1c83e90e.jpg";
 const PHOTO_7 = "https://cdn.poehali.dev/files/d0ba2cd0-20f7-493c-b8e3-bbde5f0b215c.jpg";
