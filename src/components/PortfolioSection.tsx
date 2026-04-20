@@ -44,8 +44,18 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
   const t = (key: string) => TRANSLATIONS[lang][key] ?? key;
 
   const [activeCatKey, setActiveCatKey] = useState("cat_all");
+  const [gridVisible, setGridVisible] = useState(true);
   const [selectedWork, setSelectedWork] = useState<typeof PORTFOLIO_ITEMS[0] | null>(null);
   const [photoIndex, setPhotoIndex] = useState(0);
+
+  const handleCatChange = (key: string) => {
+    if (key === activeCatKey) return;
+    setGridVisible(false);
+    setTimeout(() => {
+      setActiveCatKey(key);
+      setGridVisible(true);
+    }, 200);
+  };
 
   const CAT_KEYS = ["cat_all", "cat_choppers", "cat_bobbers", "cat_restoration", "cat_tuning", "cat_custom"];
   const categories = CAT_KEYS.map(k => ({ key: k, label: t(k) }));
@@ -91,7 +101,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
             {categories.map(({ key, label }) => (
               <button
                 key={key}
-                onClick={() => setActiveCatKey(key)}
+                onClick={() => handleCatChange(key)}
                 className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-sm border transition-all ${activeCatKey === key ? "bg-fire border-fire text-white" : "border-border text-muted-foreground hover:border-fire/50 hover:text-foreground"}`}
               >
                 {label}
@@ -99,7 +109,7 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
             ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 transition-all duration-200 ${gridVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}>
             {filteredPortfolio.map((item) => (
               <AnimatedSectionLocal key={item.id}>
                 <div
