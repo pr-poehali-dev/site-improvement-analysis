@@ -43,27 +43,24 @@ interface PortfolioSectionProps {
 export default function PortfolioSection({ lang }: PortfolioSectionProps) {
   const t = (key: string) => TRANSLATIONS[lang][key] ?? key;
 
-  const [activeCategory, setActiveCategory] = useState(TRANSLATIONS[lang].cat_all);
+  const [activeCatKey, setActiveCatKey] = useState("cat_all");
   const [selectedWork, setSelectedWork] = useState<typeof PORTFOLIO_ITEMS[0] | null>(null);
   const [photoIndex, setPhotoIndex] = useState(0);
 
-  const prevLangRef = { current: lang };
-  if (prevLangRef.current !== lang) {
-    setActiveCategory(TRANSLATIONS[lang].cat_all);
-    prevLangRef.current = lang;
-  }
+  const CAT_KEYS = ["cat_all", "cat_choppers", "cat_bobbers", "cat_restoration", "cat_tuning", "cat_custom"];
+  const categories = CAT_KEYS.map(k => ({ key: k, label: t(k) }));
 
-  const categories = [t("cat_all"), t("cat_choppers"), t("cat_bobbers"), t("cat_restoration"), t("cat_tuning"), t("cat_custom")];
+  const CAT_RU_MAP: Record<string, string> = {
+    cat_choppers: "Чопперы",
+    cat_bobbers: "Бобберы",
+    cat_restoration: "Реставрация",
+    cat_tuning: "Тюнинг",
+    cat_custom: "Кастом",
+  };
 
-  const filteredPortfolio = activeCategory === t("cat_all")
+  const filteredPortfolio = activeCatKey === "cat_all"
     ? PORTFOLIO_ITEMS
-    : PORTFOLIO_ITEMS.filter(item => {
-        const catMap: Record<string, string> = {
-          [t("cat_choppers")]: "Чопперы", [t("cat_bobbers")]: "Бобберы",
-          [t("cat_restoration")]: "Реставрация", [t("cat_tuning")]: "Тюнинг", [t("cat_custom")]: "Кастом",
-        };
-        return item.category === (catMap[activeCategory] || activeCategory);
-      });
+    : PORTFOLIO_ITEMS.filter(item => item.category === CAT_RU_MAP[activeCatKey]);
 
   const openWork = (item: typeof PORTFOLIO_ITEMS[0]) => {
     setSelectedWork(item);
@@ -89,6 +86,18 @@ export default function PortfolioSection({ lang }: PortfolioSectionProps) {
             </div>
 
           </AnimatedSectionLocal>
+
+          <div className="flex flex-wrap gap-2 mb-8">
+            {categories.map(({ key, label }) => (
+              <button
+                key={key}
+                onClick={() => setActiveCatKey(key)}
+                className={`font-body text-xs uppercase tracking-widest px-4 py-2 rounded-sm border transition-all ${activeCatKey === key ? "bg-fire border-fire text-white" : "border-border text-muted-foreground hover:border-fire/50 hover:text-foreground"}`}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {filteredPortfolio.map((item) => (

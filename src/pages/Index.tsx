@@ -148,7 +148,7 @@ const Index = () => {
           loop
           playsInline
           className="absolute inset-0 w-full h-full object-cover"
-          src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/a7cf0ff5-b1a2-44a7-8533-a78bb7c78806.mp4"
+          src="https://cdn.poehali.dev/projects/7385d977-dc23-483a-a854-a24ce1679a8d/bucket/5bc3c815-add3-4abb-a611-45ae136e9a03.mp4"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/10" />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
