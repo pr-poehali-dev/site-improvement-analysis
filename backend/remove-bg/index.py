@@ -1,4 +1,4 @@
-"""Скачивает JPEG логотип, удаляет чёрный фон, сохраняет PNG в S3 и возвращает CDN-ссылку."""
+"""Скачивает JPEG логотип, удаляет красный/цветной фон, сохраняет PNG в S3 и возвращает CDN-ссылку."""
 import json
 import os
 import io
@@ -14,11 +14,10 @@ def handler(event: dict, context) -> dict:
         return {"statusCode": 200, "headers": headers, "body": ""}
 
     body = json.loads(event.get("body") or "{}")
-    image_url = body.get("url", "https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg")
+    image_url = body.get("url", "https://cdn.poehali.dev/files/3048294b-7a17-4be6-ae69-b143f00fbcd4.jpg")
     output_key = body.get("key", "logos/logo_transparent.png")
-    threshold = int(body.get("threshold", 40))
+    threshold = int(body.get("threshold", 80))
 
-    # Скачиваем изображение
     with urllib.request.urlopen(image_url) as resp:
         img_data = resp.read()
 
@@ -26,19 +25,17 @@ def handler(event: dict, context) -> dict:
     pixels = img.load()
     width, height = img.size
 
-    # Удаляем чёрный фон: пикселы, у которых R,G,B все < threshold — делаем прозрачными
+    # Удаляем красный фон: пикселы где R доминирует и G,B низкие
     for y in range(height):
         for x in range(width):
             r, g, b, a = pixels[x, y]
-            if r < threshold and g < threshold and b < threshold:
+            if r > 150 and g < 80 and b < 80:
                 pixels[x, y] = (r, g, b, 0)
 
-    # Сохраняем в PNG
     out = io.BytesIO()
     img.save(out, format="PNG")
     out.seek(0)
 
-    # Загружаем в S3
     s3 = boto3.client(
         "s3",
         endpoint_url="https://bucket.poehali.dev",

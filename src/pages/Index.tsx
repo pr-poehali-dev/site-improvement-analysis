@@ -4,6 +4,32 @@ import NavBar from "@/components/NavBar";
 import PortfolioSection from "@/components/PortfolioSection";
 import { Lang, TRANSLATIONS, STATS, PARTS_BRANDS, PHOTO_2, PHOTO_3, PHOTO_5, GARAGE_PHOTOS, FAMILY_PHOTOS, OPENING_2022_PHOTOS } from "@/data/constants";
 
+function TransparentLogo({ src, className, style }: { src: string; className?: string; style?: React.CSSProperties }) {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.onload = () => {
+      canvas.width = img.naturalWidth;
+      canvas.height = img.naturalHeight;
+      ctx.drawImage(img, 0, 0);
+      const data = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const d = data.data;
+      for (let i = 0; i < d.length; i += 4) {
+        const r = d[i], g = d[i + 1], b = d[i + 2];
+        if (r > 140 && g < 90 && b < 90) d[i + 3] = 0;
+      }
+      ctx.putImageData(data, 0, 0);
+    };
+    img.src = src;
+  }, [src]);
+  return <canvas ref={canvasRef} className={className} style={style} aria-label="Chopper Doctors World" />;
+}
+
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -164,10 +190,9 @@ const Index = () => {
               <span className="font-body text-xs text-fire tracking-widest uppercase">{t("hero_badge")}</span>
             </div>
 
-            <img
+            <TransparentLogo
               src="https://cdn.poehali.dev/files/3048294b-7a17-4be6-ae69-b143f00fbcd4.jpg"
-              alt="Chopper Doctors World"
-              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in drop-shadow-2xl mix-blend-screen"
+              className="w-64 md:w-96 lg:w-[420px] mb-6 opacity-0 animate-fade-in drop-shadow-2xl"
               style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
             />
 

@@ -1,13 +1,13 @@
 {
   "tests": [
     {
-      "name": "Remove black background from logo",
+      "name": "Remove red background from logo",
       "method": "POST",
       "path": "/",
       "body": {
-        "url": "https://cdn.poehali.dev/files/72784b27-9292-49fa-b815-c6aaa9146f3e.jpg",
+        "url": "https://cdn.poehali.dev/files/3048294b-7a17-4be6-ae69-b143f00fbcd4.jpg",
         "key": "logos/logo_transparent.png",
-        "threshold": 40
+        "threshold": 80
       },
       "expectedStatus": 200,
       "expectedBody": {"url": "string"},
