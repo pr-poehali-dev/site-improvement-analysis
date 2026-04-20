@@ -167,9 +167,9 @@ const Index = () => {
             </div>
 
             <img
-              src="https://cdn.poehali.dev/files/7ef9e215-aa20-4a2a-b8cd-3173a61ef0ae.png"
+              src="https://cdn.poehali.dev/files/f73e2b6c-0393-4f3a-a5dc-efbe878bfb52.png"
               alt="Chopper Doctors World"
-              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in mix-blend-screen"
+              className="w-64 md:w-96 lg:w-[420px] object-contain mb-6 opacity-0 animate-fade-in drop-shadow-2xl"
               style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
             />
 
