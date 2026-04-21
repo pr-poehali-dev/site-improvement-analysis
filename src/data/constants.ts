@@ -47,6 +47,9 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     album_drive_show_title: "Rostov Drive Show",
     album_drive_show_desc: "Rostov Drive Show — cars, bikes and pure passion for speed gathered in one place.",
     album_drive_show_photos: "photos",
+    album_custom_conv_title: "Кастом Конвенция 2025",
+    album_custom_conv_desc: "Custom Convention 2025 — the biggest custom motorcycle show of the year.",
+    album_custom_conv_photos: "photos",
     contact_label: "Contact", contact_title: "Let's bring your", contact_title2: "ideas into reality.",
     contact_desc: "Contact us when you are ready and we can help you bring your ideas into reality.",
     contact_write: "Write to Us", contact_call: "+34 656 82 83 48",
@@ -98,6 +101,9 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     album_drive_show_title: "Rostov Drive Show",
     album_drive_show_desc: "Rostov Drive Show — Autos, Bikes und pure Leidenschaft für Geschwindigkeit an einem Ort.",
     album_drive_show_photos: "Fotos",
+    album_custom_conv_title: "Кастом Конвенция 2025",
+    album_custom_conv_desc: "Custom Convention 2025 — die größte Custom-Motorradshow des Jahres.",
+    album_custom_conv_photos: "Fotos",
     contact_label: "Kontakt", contact_title: "Lass uns deine Ideen", contact_title2: "Realität werden lassen.",
     contact_desc: "Kontaktiere uns, wenn du bereit bist deine Ideen Realität werden zu lassen, wir helfen dir gerne dabei.",
     contact_write: "Schreib uns", contact_call: "+34 656 82 83 48",
@@ -149,6 +155,9 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     album_drive_show_title: "Rostov Drive Show",
     album_drive_show_desc: "Rostov Drive Show — машины, байки и настоящая страсть к скорости в одном месте.",
     album_drive_show_photos: "фото",
+    album_custom_conv_title: "Кастом Конвенция 2025",
+    album_custom_conv_desc: "Кастом Конвенция 2025 — крупнейшая выставка кастомных мотоциклов года.",
+    album_custom_conv_photos: "фото",
     contact_label: "Контакты", contact_title: "Воплотим вашу", contact_title2: "мечту.",
     contact_desc: "Свяжитесь с нами, когда вам будет удобно, и мы поможем воплотить ваши идеи в жизнь.",
     contact_write: "Написать нам", contact_call: "+34 656 82 83 48",
@@ -200,6 +209,9 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     album_drive_show_title: "Rostov Drive Show",
     album_drive_show_desc: "Rostov Drive Show — coches, motos y pura pasión por la velocidad en un solo lugar.",
     album_drive_show_photos: "fotos",
+    album_custom_conv_title: "Кастом Конвенция 2025",
+    album_custom_conv_desc: "Custom Convention 2025 — la mayor exposición de motos custom del año.",
+    album_custom_conv_photos: "fotos",
     contact_label: "Contacto", contact_title: "Llevemos tus ideas", contact_title2: "a la realidad.",
     contact_desc: "Contáctanos cuando estés listo y te ayudaremos a llevar tus ideas a la realidad.",
     contact_write: "Escríbenos", contact_call: "+34 656 82 83 48",
@@ -251,6 +263,9 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     album_drive_show_title: "Rostov Drive Show",
     album_drive_show_desc: "Rostov Drive Show — auto's, motoren en pure passie voor snelheid op één plek.",
     album_drive_show_photos: "foto's",
+    album_custom_conv_title: "Кастом Конвенция 2025",
+    album_custom_conv_desc: "Custom Convention 2025 — de grootste custom motorshow van het jaar.",
+    album_custom_conv_photos: "foto's",
     contact_label: "Contact", contact_title: "Laten we jouw", contact_title2: "ideeën realiteit maken.",
     contact_desc: "Neem vrijblijvend contact met ons op en wij zullen je helpen om jouw ideeën en wensen realiteit te laten worden.",
     contact_write: "Schrijf ons", contact_call: "+34 656 82 83 48",
@@ -608,6 +623,8 @@ export const ROSTOV_DRIVE_SHOW_PHOTOS: string[] = [
   "https://cdn.poehali.dev/files/2223a59f-0792-4877-ab62-3b34057290f0.jpg",
   "https://cdn.poehali.dev/files/f9abaaf5-7a69-48b8-9bd3-3cc1becbac89.jpg",
 ];
+
+export const CUSTOM_CONVENTION_2025_PHOTOS: string[] = [];
 
 export const STATS = [
   { value: "30+", key: "stats_years" },
