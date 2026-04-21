@@ -595,7 +595,19 @@ export const ROSTOV_DRIFT_PHOTOS = [
   "https://cdn.poehali.dev/files/293e293d-c644-480d-96d8-c1e93fc1e522.jpg",
 ];
 
-export const ROSTOV_DRIVE_SHOW_PHOTOS: string[] = [];
+export const ROSTOV_DRIVE_SHOW_PHOTOS: string[] = [
+  "https://cdn.poehali.dev/files/4087c118-81c9-44d7-bb67-78648c716527.jpg",
+  "https://cdn.poehali.dev/files/80aa411a-1ea8-4045-8d2a-429c19686c1a.jpg",
+  "https://cdn.poehali.dev/files/ce3f744c-8fba-48ae-8624-fe48c805ee06.jpg",
+  "https://cdn.poehali.dev/files/a5a42ae0-45b7-4e28-989b-4638c6b8954f.jpg",
+  "https://cdn.poehali.dev/files/fadd7cf7-d6b7-4a5a-8c80-c44a6cca970c.jpg",
+  "https://cdn.poehali.dev/files/d8816417-3b08-4cb6-a61e-9b734f17cf63.jpg",
+  "https://cdn.poehali.dev/files/ff7531e1-e6ed-4870-afa6-46e1b9b927f9.jpg",
+  "https://cdn.poehali.dev/files/28609da4-0391-4c75-969b-6261a3115c08.jpg",
+  "https://cdn.poehali.dev/files/ce480942-3522-4d02-a56b-21b31be1d805.jpg",
+  "https://cdn.poehali.dev/files/2223a59f-0792-4877-ab62-3b34057290f0.jpg",
+  "https://cdn.poehali.dev/files/f9abaaf5-7a69-48b8-9bd3-3cc1becbac89.jpg",
+];
 
 export const STATS = [
   { value: "30+", key: "stats_years" },
