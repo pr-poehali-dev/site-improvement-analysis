@@ -77,8 +77,14 @@ function BlogAlbum({ title, desc, photosLabel, photos, cover }: {
                 key={i}
                 className="aspect-square overflow-hidden rounded-sm cursor-pointer border border-border hover:border-fire/50 transition-all"
                 onClick={() => setLightbox(url)}
+                style={{display: 'block'}}
               >
-                <img src={url} alt="" className="w-full h-full object-cover hover:scale-110 transition-transform duration-300" />
+                <img
+                  src={url}
+                  alt=""
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                  onError={(e) => { (e.currentTarget.parentElement as HTMLElement).style.display = 'none'; }}
+                />
               </div>
             ))}
           </div>

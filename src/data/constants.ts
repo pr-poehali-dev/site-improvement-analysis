@@ -520,6 +520,8 @@ export const OPENING_2022_PHOTOS = [
   "https://cdn.poehali.dev/files/1381f59c-3505-44fc-8714-1009c83a3dcf.jpg",
   "https://cdn.poehali.dev/files/76c928c3-91d6-4966-b3d6-8ef03892356b.jpg",
   "https://cdn.poehali.dev/files/721c39e2-fcd0-4be4-b1ea-b4b73af782cb.jpg",
+  "https://cdn.poehali.dev/files/21a29c55-97f5-4f78-b3e4-0362c7d1ed5d.jpg",
+  "https://cdn.poehali.dev/files/17f2e0e4-6894-42af-864a-9c71fcde57cb.jpg",
 ];
 
 export const STATS = [
