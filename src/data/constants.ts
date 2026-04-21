@@ -426,6 +426,19 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 43, title: "Orange Purple Tribal", category: "Кастом", year: "2023", img: PHOTO_37, desc: "Оранжевый кастом с фиолетовым трибал-аэрографом. Хром, широкие колёса, вечерняя атмосфера." },
   { id: 44, title: "Loco Swiss Chopper", category: "Чопперы", year: "2023", img: PHOTO_38, desc: "Чёрный чоппер Loco на альпийском лугу. Спицованные колёса, серебристый бак, швейцарский пейзаж." },
   { id: 45, title: "Blue Woodpile", category: "Бобберы", year: "2022", img: PHOTO_39, desc: "Голубой боббер у поленницы дров. Хромированный двигатель, классические крылья, природный фон." },
+  { id: 46, title: "Harley Softail Sunset", category: "Кастом", year: "2024", img: "https://cdn.poehali.dev/files/0e4929aa-2f67-40eb-8f1f-61dea51cbb28.jpg", desc: "Бело-синий Harley-Davidson Softail на берегу моря. Хром, спицованные колёса, закатная атмосфера.", photos: [
+    "https://cdn.poehali.dev/files/0e4929aa-2f67-40eb-8f1f-61dea51cbb28.jpg",
+    "https://cdn.poehali.dev/files/5a758d4d-2dec-474a-adf9-03739b962915.jpg",
+    "https://cdn.poehali.dev/files/45bc1248-30e5-4c55-9377-d9b7251fec51.jpg",
+    "https://cdn.poehali.dev/files/44cb2ddd-001b-40f8-b72c-8d2e3e99cd5b.jpg",
+    "https://cdn.poehali.dev/files/23df33fb-26f0-4277-bbd0-f8cf3236095e.jpg",
+    "https://cdn.poehali.dev/files/171ac053-5151-4018-a186-64be59e8a4da.jpg",
+    "https://cdn.poehali.dev/files/f405a03d-7ff0-412a-a3ef-8e39579431a5.jpg",
+    "https://cdn.poehali.dev/files/120b6781-699a-402e-8a14-91abc91b83ab.jpg",
+    "https://cdn.poehali.dev/files/8bcd617f-4a93-40c4-9c3c-41e47f781e72.jpg",
+    "https://cdn.poehali.dev/files/204e3fdf-ddb7-4e72-a372-28b032f3a5a7.jpg",
+    "https://cdn.poehali.dev/files/92a9e030-2a5a-4801-a8c1-7206b2cf7a30.jpg",
+  ] },
 ];
 
 export const PARTS_BRANDS: { name: string; logo?: string }[] = [
