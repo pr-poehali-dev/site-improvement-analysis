@@ -730,6 +730,10 @@ export const OUR_WORK_PHOTOS: string[] = [
   "https://cdn.poehali.dev/files/33e16c23-5d9b-4260-8e12-cde0cfb30537.jpg",
   "https://cdn.poehali.dev/files/db3b782c-83c3-4c0c-89ca-aa256a48a213.jpg",
   "https://cdn.poehali.dev/files/6349c95c-c5a6-4394-b2ab-8ac30837140a.jpg",
+  "https://cdn.poehali.dev/files/97fd551c-7281-44af-8417-385637a1a24b.jpg",
+  "https://cdn.poehali.dev/files/1a760626-baf5-4bea-9304-17053ad42c7f.jpg",
+  "https://cdn.poehali.dev/files/9d3dd406-5dcc-4876-9084-dede9ec9d2ee.jpg",
+  "https://cdn.poehali.dev/files/45d9e601-b4e5-4d8e-8a91-8d04bf550ecb.jpg",
 ];
 
 export const STATS = [
