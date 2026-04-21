@@ -574,6 +574,10 @@ export const ROSTOV_DRIFT_PHOTOS = [
   "https://cdn.poehali.dev/files/3d655b11-b4d7-4b5e-af6c-1f947d1b0ca3.jpg",
   "https://cdn.poehali.dev/files/7cd4e5c0-0283-4efa-a68d-8fafb0ed33b4.jpg",
   "https://cdn.poehali.dev/files/d9740402-c7c7-49f9-880e-263090e1c6b7.jpg",
+  "https://cdn.poehali.dev/files/8114a3e4-f496-4b8d-945c-b0aeef870c1d.jpg",
+  "https://cdn.poehali.dev/files/a1d1dc1f-4dfc-4a68-ba20-832ae8300470.jpg",
+  "https://cdn.poehali.dev/files/7ec22c0a-e5fc-4c41-9018-80fe0e63c4d7.jpg",
+  "https://cdn.poehali.dev/files/293e293d-c644-480d-96d8-c1e93fc1e522.jpg",
 ];
 
 export const STATS = [
