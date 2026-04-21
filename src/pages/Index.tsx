@@ -59,7 +59,7 @@ function BlogAlbum({ title, desc, photosLabel, photos, cover }: {
           <img src={cover} alt={title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
         </div>
         <div className="flex-1 min-w-0">
-          <p className="font-body text-xs text-fire uppercase tracking-widest mb-1">September 2022</p>
+
           <h3 className="font-display text-xl uppercase tracking-wide truncate">{title}</h3>
           <p className="font-body text-sm text-muted-foreground mt-1">{desc}</p>
         </div>
