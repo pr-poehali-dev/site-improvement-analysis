@@ -624,7 +624,18 @@ export const ROSTOV_DRIVE_SHOW_PHOTOS: string[] = [
   "https://cdn.poehali.dev/files/f9abaaf5-7a69-48b8-9bd3-3cc1becbac89.jpg",
 ];
 
-export const CUSTOM_CONVENTION_2025_PHOTOS: string[] = [];
+export const CUSTOM_CONVENTION_2025_PHOTOS: string[] = [
+  "https://cdn.poehali.dev/files/15fe72dd-eff5-453e-a277-ca8edbb31923.jpg",
+  "https://cdn.poehali.dev/files/8ee3aea9-51e5-4bbc-a83f-6488f3166568.jpg",
+  "https://cdn.poehali.dev/files/e9f147bd-73a3-4676-a9d5-d058351699c4.jpg",
+  "https://cdn.poehali.dev/files/a98c3eba-cb8b-40c2-b028-5786d31f62cd.jpg",
+  "https://cdn.poehali.dev/files/e848aee0-4908-4056-be18-a5a25399d12b.jpg",
+  "https://cdn.poehali.dev/files/0ea7b570-9d53-4242-bf24-a7edda2b13bb.jpg",
+  "https://cdn.poehali.dev/files/4ad8fdc6-e909-4245-9c43-bf8bea7f4fdc.jpg",
+  "https://cdn.poehali.dev/files/1b21d280-0a2b-4c09-b486-065779dc67cd.jpg",
+  "https://cdn.poehali.dev/files/7d755298-9f93-4f5a-a848-a9f0a2fae2b7.jpg",
+  "https://cdn.poehali.dev/files/32ee4476-e144-4a9e-8f48-748bb114cb55.jpg",
+];
 
 export const STATS = [
   { value: "30+", key: "stats_years" },
