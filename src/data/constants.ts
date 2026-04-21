@@ -470,6 +470,11 @@ export const OPENING_2022_PHOTOS = [
   BASE + "b818b736-27af-4ab9-b098-ac5d036a219b.jpg",
   BASE + "e528e48d-89c7-4974-9547-fd47ea2ed6e6.jpg",
   BASE + "bc53f34d-20b3-4434-8229-5f8e0fe3e9ba.jpg",
+  "https://cdn.poehali.dev/files/1b137c35-76fe-4add-9953-406bd057759a.jpg",
+  "https://cdn.poehali.dev/files/7ae33841-092b-4f4e-9b67-120de9f9d792.jpg",
+  "https://cdn.poehali.dev/files/dcffef89-6d09-4700-8a69-e3195676b671.jpg",
+  "https://cdn.poehali.dev/files/3fc188dc-af31-42a6-a3d1-df709a1bae31.jpg",
+  "https://cdn.poehali.dev/files/f16dd6e5-5fc8-4875-bd55-884f67d0c37e.jpg",
 ];
 
 export const STATS = [
