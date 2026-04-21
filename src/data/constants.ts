@@ -635,6 +635,22 @@ export const CUSTOM_CONVENTION_2025_PHOTOS: string[] = [
   "https://cdn.poehali.dev/files/1b21d280-0a2b-4c09-b486-065779dc67cd.jpg",
   "https://cdn.poehali.dev/files/7d755298-9f93-4f5a-a848-a9f0a2fae2b7.jpg",
   "https://cdn.poehali.dev/files/32ee4476-e144-4a9e-8f48-748bb114cb55.jpg",
+  "https://cdn.poehali.dev/files/65a4b948-f281-469e-a178-7de9ead9c30c.jpg",
+  "https://cdn.poehali.dev/files/d73f2267-6481-4d7b-b8d8-65ecff2abde8.jpg",
+  "https://cdn.poehali.dev/files/c393b0a2-48a6-4471-be6a-459f432bd730.jpg",
+  "https://cdn.poehali.dev/files/2b6fb7f1-5e4b-40f8-879d-6da1054a98aa.jpg",
+  "https://cdn.poehali.dev/files/97abaae2-528d-4036-9814-21d82f6d2c3d.jpg",
+  "https://cdn.poehali.dev/files/0c8eef01-d29d-4230-9dcc-282830d1deab.jpg",
+  "https://cdn.poehali.dev/files/76f4e4b3-e297-400a-b83a-243b07a2ffb0.jpg",
+  "https://cdn.poehali.dev/files/7a4b6da5-b155-4fbd-83ac-1d70969e015f.jpg",
+  "https://cdn.poehali.dev/files/de1949cf-4aea-4c13-92cb-e28104f88170.jpg",
+  "https://cdn.poehali.dev/files/77a5000e-0eeb-4523-b283-c807333101df.jpg",
+  "https://cdn.poehali.dev/files/ad9a3272-0d06-4a5b-abaa-78493e73bc66.jpg",
+  "https://cdn.poehali.dev/files/d58c23a9-acbc-4340-a7cd-93463fde0d3c.jpg",
+  "https://cdn.poehali.dev/files/427b0591-ece1-44f2-a526-b1c71b380714.jpg",
+  "https://cdn.poehali.dev/files/7354a8e5-3ed4-443b-93bb-2ee3db73a801.jpg",
+  "https://cdn.poehali.dev/files/bff4ba9e-f0c2-40c1-8cad-ac0c284b4343.jpg",
+  "https://cdn.poehali.dev/files/5c60c5a4-ec12-450f-a4af-2da2c39b689d.jpg",
 ];
 
 export const STATS = [
