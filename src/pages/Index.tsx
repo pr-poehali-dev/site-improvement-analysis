@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Icon from "@/components/ui/icon";
 import NavBar from "@/components/NavBar";
 import PortfolioSection from "@/components/PortfolioSection";
-import { Lang, TRANSLATIONS, STATS, PARTS_BRANDS, PHOTO_2, PHOTO_3, PHOTO_5, GARAGE_PHOTOS, FAMILY_PHOTOS, OPENING_2022_PHOTOS } from "@/data/constants";
+import { Lang, TRANSLATIONS, STATS, PARTS_BRANDS, PHOTO_2, PHOTO_3, PHOTO_5, GARAGE_PHOTOS, FAMILY_PHOTOS, OPENING_2022_PHOTOS, ROSTOV_DRIFT_PHOTOS } from "@/data/constants";
 
 
 
@@ -370,6 +370,15 @@ const Index = () => {
               photos={OPENING_2022_PHOTOS}
               cover="https://cdn.poehali.dev/files/a70aab46-8237-4451-b728-520f31544a23.jpg"
             />
+            <div className="mt-6">
+              <BlogAlbum
+                title={t("album_rostov_title")}
+                desc={t("album_rostov_desc")}
+                photosLabel={t("album_rostov_photos")}
+                photos={ROSTOV_DRIFT_PHOTOS}
+                cover="https://cdn.poehali.dev/files/fa199657-90aa-4536-8b6b-51b9feb577c9.jpg"
+              />
+            </div>
           </AnimatedSection>
         </div>
       </section>
