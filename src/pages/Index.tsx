@@ -368,7 +368,7 @@ const Index = () => {
               desc={t("album_opening_desc")}
               photosLabel={t("album_opening_photos")}
               photos={OPENING_2022_PHOTOS}
-              cover={OPENING_2022_PHOTOS[0]}
+              cover="https://cdn.poehali.dev/files/a70aab46-8237-4451-b728-520f31544a23.jpg"
             />
           </AnimatedSection>
         </div>
