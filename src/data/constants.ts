@@ -546,6 +546,20 @@ export const ROSTOV_DRIFT_PHOTOS = [
   "https://cdn.poehali.dev/files/fa199657-90aa-4536-8b6b-51b9feb577c9.jpg",
   "https://cdn.poehali.dev/files/0e1ae16d-96c5-4c30-aed4-c285fb9bd29d.jpg",
   "https://cdn.poehali.dev/files/bae3d7ea-51a2-4c80-95df-3fadaf9a4401.jpg",
+  "https://cdn.poehali.dev/files/2b019814-586c-4771-85cc-35a431a48514.jpg",
+  "https://cdn.poehali.dev/files/a5b5cfe4-5cea-470f-ab2e-acff1f424bae.jpg",
+  "https://cdn.poehali.dev/files/ee4e9996-277b-4f55-b2fa-5ae75554f06d.jpg",
+  "https://cdn.poehali.dev/files/4cfaafcd-2bbb-4541-a404-1c6348ca35e9.jpg",
+  "https://cdn.poehali.dev/files/63e3b816-4854-4ce6-906c-9ae0ea128575.jpg",
+  "https://cdn.poehali.dev/files/c74af76d-9dd2-47a7-bb98-24423d04c427.jpg",
+  "https://cdn.poehali.dev/files/ef6303d1-c875-44dc-926c-2b70436dbd69.jpg",
+  "https://cdn.poehali.dev/files/fe73aac7-afe9-497f-907a-069615420493.jpg",
+  "https://cdn.poehali.dev/files/735be576-9c3b-475d-a50e-e9ff43edd7e5.jpg",
+  "https://cdn.poehali.dev/files/9ebd362a-5d14-4401-978d-9a3a731ee95f.jpg",
+  "https://cdn.poehali.dev/files/07dce72e-d637-4ad6-96b2-f9221391e77b.jpg",
+  "https://cdn.poehali.dev/files/e999180e-0748-449c-89d7-cfbc53613b67.jpg",
+  "https://cdn.poehali.dev/files/3bbdd9f5-bf7a-4df4-8ee0-b0a22a038bc9.jpg",
+  "https://cdn.poehali.dev/files/9759a20c-2e53-4a31-a3af-c185a921edab.jpg",
 ];
 
 export const STATS = [
