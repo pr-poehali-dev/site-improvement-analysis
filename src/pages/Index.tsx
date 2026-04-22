@@ -433,7 +433,8 @@ const Index = () => {
             </a>
             <a
               href="mailto:pauly@chopperdoctor.ru"
-              className="font-display text-sm tracking-widest uppercase px-10 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm flex items-center gap-2"
+              className="font-display text-sm tracking-widest uppercase px-10 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm flex items-center gap-2"
+              style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.4)" }}
             >
               <Icon name="Mail" size={16} />
               pauly@chopperdoctor.ru
