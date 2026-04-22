@@ -380,6 +380,7 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
     "https://cdn.poehali.dev/files/0cceab04-d79c-44ca-ad2f-af5459ccc12a.jpg",
     "https://cdn.poehali.dev/files/69407538-6253-4a9d-a867-26612d34cfdd.jpg",
   ] },
+  { id: 39, title: "Bordeaux Estate", category: "Чопперы", year: "2022", img: PHOTO_33, desc: "Бордовый чоппер с гравировкой на баке у особняка. Хром, широкие колёса, европейский стиль." },
   { id: 7, title: "Orange Flame Chopper", category: "Чопперы", year: "2025", img: PHOTO_1, desc: "Кастом с огненным аэрографом. Хромированный V-twin, низкий хардтейл, рельсы как сцена.", photos: [
     "https://cdn.poehali.dev/files/6c1c4e45-c5fe-4ce3-90ee-d4b4f9cd13ca.jpg",
   ] },
@@ -419,7 +420,6 @@ export const PORTFOLIO_ITEMS: PortfolioItem[] = [
   { id: 36, title: "Desert Green Flame", category: "Бобберы", year: "2024", img: PHOTO_30, desc: "Чёрный боббер с зелёным огнём на баке. Спицованные колёса, открытый V-twin, пустынная дорога." },
   { id: 37, title: "Full Flame Orange", category: "Чопперы", year: "2023", img: PHOTO_31, desc: "Полностью огненный оранжевый чоппер. Аэрограф на всех панелях, хром, пустынная трасса." },
   { id: 38, title: "Blue Skull Trike", category: "Тюнинг", year: "2023", img: PHOTO_32, desc: "Кастомный трайк с черепами и бирюзовым аэрографом. Хром везде, три колеса, мощный V-twin." },
-  { id: 39, title: "Bordeaux Estate", category: "Чопперы", year: "2022", img: PHOTO_33, desc: "Бордовый чоппер с гравировкой на баке у особняка. Хром, широкие колёса, европейский стиль." },
   { id: 40, title: "Aventador V-Rod", category: "Тюнинг", year: "2025", img: PHOTO_34, desc: "Жёлто-чёрный кастом V-Rod Aventador. Карбоновые панели, широкая задняя резина, экстремальный тюнинг." },
   { id: 41, title: "Green Flame Bobber", category: "Бобберы", year: "2024", img: PHOTO_35, desc: "Ярко-зелёный боббер с пламенным аэрографом. Хромированный V-twin, спицованные колёса, уличный стиль." },
   { id: 42, title: "Black Street Chopper", category: "Чопперы", year: "2024", img: PHOTO_36, desc: "Полностью чёрный стрит-чоппер. Минималистичный дизайн, хромированные выхлопы, городской байк." },
