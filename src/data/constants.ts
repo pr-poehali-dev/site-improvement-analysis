@@ -167,7 +167,7 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     album_our_work_title: "Наша работа",
     album_our_work_desc: "Жизнь мастерской Chopper Doctors World — сборка, двигатели, рамы и готовые мотоциклы.",
     album_our_work_photos: "фото",
-    contact_label: "Контакты", contact_title: "Воплотим вашу", contact_title2: "мечту.",
+    contact_label: "Контакты", contact_title: "Воплотим вашу", contact_title2: "мечту",
     contact_desc: "Свяжитесь с нами, когда вам будет удобно, и мы поможем воплотить ваши идеи в жизнь.",
     contact_write: "Написать нам", contact_call: "+34 656 82 83 48",
     contact_address: "Calle Polonia, 35, San Pedro de Alcántara, 29670 Марбелья, Малага, Испания",
