@@ -425,10 +425,11 @@ const Index = () => {
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <a
               href="mailto:mickey@thechopperdoctor.com"
-              className="font-display text-sm tracking-widest uppercase px-10 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm"
+              className="font-display text-sm tracking-widest uppercase px-10 py-4 bg-fire text-white hover:bg-fire/80 transition-all rounded-sm flex items-center gap-2"
               style={{ boxShadow: "0 0 30px hsl(0 90% 45% / 0.4)" }}
             >
-              {t("contact_write")}
+              <Icon name="Mail" size={16} />
+              mickey@thechopperdoctor.com
             </a>
             <a
               href="tel:+34656828348"
