@@ -115,7 +115,7 @@ function BlogAlbum({ title, desc, photosLabel, photos, cover }: {
 }
 
 const Index = () => {
-  const [lang, setLang] = useState<Lang>("en");
+  const [lang, setLang] = useState<Lang>("ru");
   const [langOpen, setLangOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [menuOpen, setMenuOpen] = useState(false);
