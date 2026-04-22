@@ -131,7 +131,7 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     hero_desc: "Благодаря более чем 30-летнему опыту, Chopper Doctors производит чопперы, которые сочетают американский стиль с тщательностью швейцарского качества и традициями старой школы.",
     hero_btn_portfolio: "Смотреть мотоциклы", hero_btn_contact: "Связаться с нами",
     stats_years: "лет опыта", stats_projects: "проектов", stats_certified: "сертифицировано H-D", stats_passion: "страсть к делу",
-    portfolio_label: "Кастомные мотоциклы", portfolio_title: "Мотоцикл Галерея",
+    portfolio_label: "Кастомные мотоциклы", portfolio_title: "Галерея мотоциклов",
     portfolio_desc: "Мы производим мотоциклы, которые существуют не только для восхищения, но и конечно для поездок. Бескомпромиссный чоппер, созданный для осуществления вашей мечты.",
     cat_all: "Все работы", cat_choppers: "Чопперы", cat_bobbers: "Бобберы", cat_restoration: "Реставрация", cat_tuning: "Тюнинг", cat_custom: "Кастом",
     garage_label: "Наша мастерская", garage_title: "Кастомизация, Сервис и Ремонт",
