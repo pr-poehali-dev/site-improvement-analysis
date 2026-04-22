@@ -479,6 +479,10 @@ const Index = () => {
           </div>
           <div className="border-t border-border pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-muted-foreground font-body">
             <p>{t("footer_rights")}</p>
+            <a href="mailto:mickey@thechopperdoctor.com" className="hover:text-fire transition-colors flex items-center gap-1.5">
+              <Icon name="Mail" size={12} />
+              mickey@thechopperdoctor.com
+            </a>
             <button className="hover:text-fire transition-colors">{t("footer_terms")}</button>
           </div>
         </div>
