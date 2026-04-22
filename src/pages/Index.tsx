@@ -246,9 +246,9 @@ const Index = () => {
               <h2 className="font-display text-4xl md:text-5xl uppercase tracking-tight mb-6">{t("garage_title")}</h2>
               <p className="font-body text-muted-foreground leading-relaxed mb-5">{t("garage_p1")}</p>
               <p className="font-body text-muted-foreground leading-relaxed mb-8">
-                {t("garage_p2").replace("Harley-Davidson", "")}
+                {t("garage_p2").split("Harley-Davidson")[0]}
                 <span className="text-fire font-medium">Harley-Davidson</span>
-                {t("garage_p2").includes("Harley-Davidson") ? "" : ""}
+                {t("garage_p2").split("Harley-Davidson")[1] ?? ""}
               </p>
               <div className="grid grid-cols-2 gap-3">
                 {[
