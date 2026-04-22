@@ -128,7 +128,7 @@ export const TRANSLATIONS: Record<Lang, Record<string, string>> = {
     nav_contact: "Связаться",
     hero_badge: "Добро пожаловать в мир Chopper Doctors",
     hero_slogan: "«Создан для езды» — это не просто слоган, это образ жизни",
-    hero_desc: "Благодаря более чем 30-летнему опыту, Chopper Doctors производит чопперы, которые сочетают американский стиль с тщательностью швейцарского качества и традициями старой школы.",
+    hero_desc: "Благодаря более чем 30-летнему опыту, Chopper Doctors производит чопперы, которые сочетают аутентичный стиль с тщательностью швейцарского качества и традициями старой школы.",
     hero_btn_portfolio: "Смотреть мотоциклы", hero_btn_contact: "Контакты",
     stats_years: "лет опыта", stats_projects: "проектов", stats_certified: "сертифицировано H-D", stats_passion: "страсть к делу",
     portfolio_label: "Кастомные мотоциклы", portfolio_title: "Галерея мотоциклов",
