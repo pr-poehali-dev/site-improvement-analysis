@@ -432,11 +432,25 @@ const Index = () => {
               mickey@thechopperdoctor.com
             </a>
             <a
+              href="mailto:pauly@chopperdoctor.ru"
+              className="font-display text-sm tracking-widest uppercase px-10 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm flex items-center gap-2"
+            >
+              <Icon name="Mail" size={16} />
+              pauly@chopperdoctor.ru
+            </a>
+            <a
               href="tel:+34656828348"
               className="font-display text-sm tracking-widest uppercase px-10 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm flex items-center gap-2"
             >
               <Icon name="Phone" size={16} />
               {t("contact_call")}
+            </a>
+            <a
+              href="tel:+79895175076"
+              className="font-display text-sm tracking-widest uppercase px-10 py-4 border border-border text-foreground hover:border-fire hover:text-fire transition-all rounded-sm flex items-center gap-2"
+            >
+              <Icon name="Phone" size={16} />
+              +7 989 517-50-76
             </a>
           </div>
 
